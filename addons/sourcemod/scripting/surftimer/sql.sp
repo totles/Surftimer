@@ -9305,7 +9305,7 @@ public void SQL_SelectAnnouncementsCallback(Handle owner, Handle hndl, const cha
 		g_fServerLoading[1] = GetGameTime();
 		g_bHasLatestID = true;
 		float time = g_fServerLoading[1] - g_fServerLoading[0];
-		LogToFileEx(g_szLogFile, "[Surftimer] Finished loading server settings in %fs", time);
+		LogToFileEx(g_szLogFile, "[SurfTimer] Finished loading server settings in %fs", time);
 		loadAllClientSettings();
 	} 
 }
