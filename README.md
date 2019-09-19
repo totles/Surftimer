@@ -7,6 +7,20 @@
 
 ~ 4GB of RAM
 
+## Issue Rules
+
+**If any of the rules listed below are not followed, you must expect the issue to be closed immediately.**
+
+- Follow requirements
+	- The timer is up to date!
+	- SourceMod and MetaMod are up to date!
+	- Includes are up to date!
+	- Using the stock timer without any own changes!
+- You're following the template
+	- That means you won't delete any pre-entered questions!
+- You're giving clear information
+- You won't edit issues - you always write a new comment below!
+
 ## Changelog
 
 *   [Changelog](https://github.com/totles/z4lab-surftimer/blob/master/CHANGELOG.md) for a list of all our changes / fixes
