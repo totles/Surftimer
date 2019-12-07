@@ -639,7 +639,7 @@ int g_CurrentZoneTypeId[MAXPLAYERS + 1];
 // Is client renaming zone?
 bool g_ClientRenamingZone[MAXPLAYERS + 1];
 
-// Zone team colors TODO: remove
+// Zone team colors
 int beamColorT[] = { 255, 0, 0, 255 };
 int beamColorCT[] = { 0, 0, 255, 255 };
 int beamColorN[] = { 255, 255, 0, 255 };
@@ -843,7 +843,7 @@ char g_szPersonalRecord[MAXPLAYERS + 1][64];
 // Average map time
 float g_favg_maptime;
 
-// Average bonus times TODO: Combine with g_favg_maptime
+// Average bonus times
 float g_fAvg_BonusTime[MAXZONEGROUPS];
 
 // If timer is started for the first time, print avg times
@@ -1106,7 +1106,7 @@ ConVar g_hAdminMenuFlag = null;
 // Add !ckadmin to !admin
 Handle g_hAdminMenu = null;
 
-// Weird admin menu trickery TODO: wtf
+// Weird admin menu trickery
 int g_AdminMenuLastPage[MAXPLAYERS + 1];
 
 /*----------  Player Points  ----------*/

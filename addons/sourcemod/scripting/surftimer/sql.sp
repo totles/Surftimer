@@ -5968,7 +5968,7 @@ public void SQL_UpdateWrcpRecordCallback2(Handle owner, Handle hndl, const char[
 	int client = ReadPackCell(data);
 	CloseHandle(data);
 
-	if (bInsert) // fluffys FIXME
+	if (bInsert) // fluffys
 	{
 		if (style == 0)
 			g_TotalStageRecords[stage]++;
