@@ -1407,7 +1407,8 @@ public Action Event_PlayerJump(Handle event, char[] name, bool dontBroadcast)
 			}
 		}
 
-		if (GetConVarBool(g_hOneJumpLimit))
+		if (GetConVarBool(g_hOneJumpLimit) && GetConVarInt(g_hLimitSpeedType) == 1)
+
 		{
 			if (g_bInStartZone[client] || g_bInStageZone[client])
 			{

@@ -1,20 +1,20 @@
 # z4lab-SurfTimer 280 for CS:GO
 
 ## Installation and requirements
-[SourceMod 1.11](https://www.sourcemod.net/downloads.php?branch=dev), [MetaMod 1.10](https://www.sourcemm.net/downloads.php/?branch=stable) and a working MySQL instance is required for this plugin 
+[SourceMod 1.10](https://www.sourcemod.net/downloads.php?branch=stable), [MetaMod 1.10](https://www.sourcemm.net/downloads.php/?branch=stable) and a working MySQL instance is required for this plugin 
 
-<sup>(This version also supports ~~SourceMod 1.10~~ and MetaMod 1.11)</sup>
+<sup>(This version also supports SourceMod 1.11 and MetaMod 1.11)</sup>
 
 ~ 4GB of RAM
 
 ## Changelog
 
-*   [Changelog](https://github.com/totles/z4lab-surftimer/blob/master/CHANGELOG.md) for a list of all our changes / fixes
+*   [Changelog](https://github.com/z4lab/z4lab-surftimer/blob/master/CHANGELOG.md) for a list of all our changes / fixes
 
 
 ## Fresh Install
 
-*   download the latest version from the release page [here](https://github.com/totles/z4lab-surftimer/releases/latest)
+*   download the latest version from the release page [here](https://github.com/z4lab/z4lab-surftimer/releases/latest)
 *   copy the files to your csgo directory
 *   edit configs (mysql db, etc, to do)
 
@@ -22,14 +22,14 @@
 
 ### upgrading from SurfTimer(fluffys)
 
-*   download the latest version from the release page [here](https://github.com/totles/z4lab-surftimer/releases/latest)
-*   copy the files to your csgo directory <br> - an update script can be found [here](https://github.com/totles/z4lab-surftimer/blob/master/scripts/upgrade_scripts/upgrade-fluffy.sh)
+*   download the latest version from the release page [here](https://github.com/z4lab/z4lab-surftimer/releases/latest)
+*   copy the files to your csgo directory <br> - an update script can be found [here](https://github.com/z4lab/z4lab-surftimer/blob/master/scripts/upgrade_scripts/upgrade-fluffy.sh)
 *   edit configs (mysql db, etc, to do)
 *   run `mysql-files/upgrade-fluffy.sql` in your surftimer db
 
 ### upgrading from ckSurf(nikooo777)
 
-*   download the latest version from the release page [here](https://github.com/totles/z4lab-surftimer/releases/latest)
+*   download the latest version from the release page [here](https://github.com/z4lab/z4lab-surftimer/releases/latest)
 *   copy the files to your csgo directory
 *   remove all old ckSurf data you don't want anymore
 *   run `mysql-files/upgrade-niko.sql` in your ckSurf db
