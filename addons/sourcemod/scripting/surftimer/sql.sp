@@ -5473,7 +5473,7 @@ public void db_viewPlayerOptionsCallback(Handle owner, Handle hndl, const char[]
 	}
 	else
 	{
-		char szQuery[512];
+		char szQuery[1024];
 		if (!IsValidClient(client))
 		return;
 
