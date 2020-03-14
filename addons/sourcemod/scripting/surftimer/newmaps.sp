@@ -1,9 +1,9 @@
 void CreateCommandsNewMap()
 {
-	RegConsoleCmd("sm_newmap", Client_NewMap, "[surftimer] shows new maps");
-	RegConsoleCmd("sm_nm", Client_NewMap, "[surftimer] shows new maps");
-	RegAdminCmd("sm_addnewmap", Client_AddNewMap, ADMFLAG_ROOT, "[surftimer] add a new map");
-	RegAdminCmd("sm_anm", Client_AddNewMap, ADMFLAG_ROOT, "[surftimer] add a new map");
+	RegConsoleCmd("sm_newmap", Client_NewMap, "[SurfTimer] 显示新地图");
+	RegConsoleCmd("sm_nm", Client_NewMap, "[SurfTimer] 显示新地图");
+	RegAdminCmd("sm_addnewmap", Client_AddNewMap, ADMFLAG_ROOT, "[SurfTimer] 添加地图");
+	RegAdminCmd("sm_anm", Client_AddNewMap, ADMFLAG_ROOT, "[SurfTimer] 添加地图");
 
 	db_present();
 }

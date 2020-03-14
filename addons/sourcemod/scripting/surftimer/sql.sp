@@ -1026,49 +1026,33 @@ public void sql_CountFinishedMapsCallback(Handle owner, Handle hndl, const char[
 
 					if (tier == 1)
 					{
-						wrpoints = ((float(totalplayers) * 1.75) / 6);
-						wrpoints += 58.5;
-						if (wrpoints < 250.0)
-							wrpoints = 250.0;
+						wrpoints = ((float(totalplayers) * 2));
+						wrpoints += 2000;
 					}
 					else if (tier == 2)
 					{
-						wrpoints = ((float(totalplayers) * 2.8) / 5);
-						wrpoints += 82.15;
-						if (wrpoints < 500.0)
-							wrpoints = 500.0;
+						wrpoints = ((float(totalplayers) * 1));
+						wrpoints += 2000;
 					}
 					else if (tier == 3)
 					{
-						wrpoints = ((float(totalplayers) * 3.5) / 4);
-						if (wrpoints < 750.0)
-							wrpoints = 750.0;
-						else
-							wrpoints += 117;
+						wrpoints = ((float(totalplayers) * 4));
+						wrpoints += 2000;
 					}
 					else if (tier == 4)
 					{
-						wrpoints = ((float(totalplayers) * 5.74) / 4);
-						if (wrpoints < 1000.0)
-							wrpoints = 1000.0;
-						else
-							wrpoints += 164.25;
+						wrpoints = ((float(totalplayers) * 10));
+						wrpoints += 2000;
 					}
 					else if (tier == 5)
 					{
-						wrpoints = ((float(totalplayers) * 7) / 4);
-						if (wrpoints < 1250.0)
-							wrpoints = 1250.0;
-						else
-							wrpoints += 234;
+						wrpoints = ((float(totalplayers) * 20));
+						wrpoints += 2500;
 					}
 					else if (tier == 6)
 					{
-						wrpoints = ((float(totalplayers) * 14) / 4);
-						if (wrpoints < 1500.0)
-							wrpoints = 1500.0;
-						else
-							wrpoints += 328;
+						wrpoints = ((float(totalplayers) * 50));
+						wrpoints += 3000;
 					}
 					else // no tier set
 						wrpoints = 25.0;
@@ -1772,12 +1756,12 @@ public void sql_selectPlayerProfileCallback(Handle owner, Handle hndl, const cha
 		int unix = time - lastseen;
 		diffForHumans(unix, szLastSeen, sizeof(szLastSeen), 1);
 
-		Format(szMapPoints, 128, "Maps: %i/%i - [%i] (%s%c)", finishedMaps, g_pr_MapCount[0], mapPoints, szPerc, PERCENT);
+		Format(szMapPoints, 128, "地图数: %i/%i - [%i] (%s%c)", finishedMaps, g_pr_MapCount[0], mapPoints, szPerc, PERCENT);
 
 		if (wrbPoints > 0)
-			Format(szBonusPoints, 128, "Bonuses: %i/%i - [%i+%i] (%s%c)", finishedBonuses, g_pr_BonusCount, bonusPoints, wrbPoints, szBPerc, PERCENT);
+			Format(szBonusPoints, 128, "奖励关数: %i/%i - [%i+%i] (%s%c)", finishedBonuses, g_pr_BonusCount, bonusPoints, wrbPoints, szBPerc, PERCENT);
 		else
-			Format(szBonusPoints, 128, "Bonuses: %i/%i - [%i] (%s%c)", finishedBonuses, g_pr_BonusCount, bonusPoints, szBPerc, PERCENT);
+			Format(szBonusPoints, 128, "奖励关数: %i/%i - [%i] (%s%c)", finishedBonuses, g_pr_BonusCount, bonusPoints, szBPerc, PERCENT);
 
 		if (wrPoints > 0)
 			Format(szTop10Points, 128, "Top10: %i - [%i+%i]", top10s, top10Points, wrPoints);
@@ -1785,17 +1769,17 @@ public void sql_selectPlayerProfileCallback(Handle owner, Handle hndl, const cha
 			Format(szTop10Points, 128, "Top10: %i - [%i]", top10s, top10Points);
 
 		if (wrcpPoints > 0)
-			Format(szStagePc, 128, "Stages: %i/%i [0+%d] (%s%c)", finishedStages, g_pr_StageCount, wrcpPoints, szSPerc, PERCENT);
+			Format(szStagePc, 128, "关卡数: %i/%i [0+%d] (%s%c)", finishedStages, g_pr_StageCount, wrcpPoints, szSPerc, PERCENT);
 		else
-			Format(szStagePc, 128, "Stages: %i/%i [0] (%s%c)", finishedStages, g_pr_StageCount, szSPerc, PERCENT);
+			Format(szStagePc, 128, "关卡数: %i/%i [0] (%s%c)", finishedStages, g_pr_StageCount, szSPerc, PERCENT);
 
-		Format(szMiPc, 128, "Map Improvement Pts: %i - [%i]", groups, groupPoints);
+		Format(szMiPc, 128, "G1-G5次数及额外Pts: %i次 - [%i]", groups, groupPoints);
 
-		Format(szRecords, 128, "Records:\nMap WR: %i\nStage WR: %i\nBonus WR: %i", wrs, wrcps, wrbs);
+		Format(szRecords, 128, "最佳记录数:\n地图最佳: %i\n关卡最佳: %i\n奖励关最佳: %i", wrs, wrcps, wrbs);
 
-		Format(szCompleted, 1024, "Completed - Points (%s%c):\n%s\n%s\n%s\n%s\n \n%s\n \n%s\n \n", szTotalPerc, PERCENT, szMapPoints, szBonusPoints, szTop10Points, szStagePc, szMiPc, szRecords);
+		Format(szCompleted, 1024, "完成度 - Pts (%s%c):\n%s\n%s\n%s\n%s\n \n%s\n \n%s\n \n", szTotalPerc, PERCENT, szMapPoints, szBonusPoints, szTop10Points, szStagePc, szMiPc, szRecords);
 
-		Format(g_pr_szrank[client], 512, "Rank: %s/%i %s\nTotal pts: %i\n \n", szRank, g_pr_RankedPlayers[style], szSkillGroup, points);
+		Format(g_pr_szrank[client], 512, "排名: %s/%i %s\n拥有Pts: %i\n \n", szRank, g_pr_RankedPlayers[style], szSkillGroup, points);
 		
 		char szTop[128];
 		if (style > 0)
@@ -1812,11 +1796,11 @@ public void sql_selectPlayerProfileCallback(Handle owner, Handle hndl, const cha
 		Menu menu = CreateMenu(ProfileMenuHandler);
 		SetMenuTitle(menu, szTitle);
 		AddMenuItem(menu, "Finished maps", szCompleted);
-		AddMenuItem(menu, szSteamId, "Player Info");
+		AddMenuItem(menu, szSteamId, "玩家个人资料");
 
 		if (IsValidClient(client))
 			if (StrEqual(szSteamId, g_szSteamID[client]))
-				AddMenuItem(menu, "Refresh my profile", "Refresh my profile");
+				AddMenuItem(menu, "Refresh my profile", "刷新我的个人信息");
 
 		SetMenuExitButton(menu, true);
 		DisplayMenu(menu, client, MENU_TIME_FOREVER);
@@ -1884,10 +1868,10 @@ public void completionMenu(int client)
 
 	Menu theCompletionMenu = CreateMenu(CompletionMenuHandler);
 	SetMenuTitle(theCompletionMenu, szTitle);
-	AddMenuItem(theCompletionMenu, "Complete Maps", "Complete Maps");
-	AddMenuItem(theCompletionMenu, "Incomplete Maps", "Incomplete Maps");
-	AddMenuItem(theCompletionMenu, "Top 10 Maps", "Top 10 Maps");
-	AddMenuItem(theCompletionMenu, "WRs", "WRs");
+	AddMenuItem(theCompletionMenu, "Complete Maps", "已完成地图");
+	AddMenuItem(theCompletionMenu, "Incomplete Maps", "未完成地图");
+	AddMenuItem(theCompletionMenu, "Top 10 Maps", "前十名地图");
+	AddMenuItem(theCompletionMenu, "WRs", "最佳纪录地图");
 	SetMenuExitBackButton(theCompletionMenu, true);
 	DisplayMenu(theCompletionMenu, client, MENU_TIME_FOREVER);
 }
@@ -4011,7 +3995,7 @@ public void db_insertZone(int zoneid, int zonetype, int zonetypeid, float pointa
 	Format(zName, 128, g_szZoneGroupName[zonegroup]);
 
 	// char sql_insertZones[] = "INSERT INTO ck_zones (mapname, zoneid, zonetype, zonetypeid, pointa_x, pointa_y, pointa_z, pointb_x, pointb_y, pointb_z, vis, team, zonegroup, zonename, hookname, targetname, onejumplimit, prespeed) VALUES ('%s', '%i', '%i', '%i', '%f', '%f', '%f', '%f', '%f', '%f', '%i', '%i', '%i','%s','%s','%s',%i,%f)";
-	Format(szQuery, 1024, sql_insertZones, g_szMapName, zoneid, zonetype, zonetypeid, pointax, pointay, pointaz, pointbx, pointby, pointbz, vis, team, zonegroup, zName, "None", "player", 1, 250.0);
+	Format(szQuery, 1024, sql_insertZones, g_szMapName, zoneid, zonetype, zonetypeid, pointax, pointay, pointaz, pointbx, pointby, pointbz, vis, team, zonegroup, zName, "None", "player", 1, 350.0);
 	SQL_TQuery(g_hDb, SQL_insertZonesCallback, szQuery, 1, DBPrio_Low);
 }
 
@@ -8066,49 +8050,33 @@ public void db_selectMapImprovementCallback(Handle owner, Handle hndl, const cha
 		// WR Points
 		if (tier == 1)
 		{
-			wrpoints = ((float(totalplayers) * 1.75) / 6);
-			wrpoints += 58.5;
-			if (wrpoints < 250.0)
-				wrpoints = 250.0;
+			wrpoints = ((float(totalplayers) * 2));
+			wrpoints += 2000;
 		}
 		else if (tier == 2)
 		{
-			wrpoints = ((float(totalplayers) * 2.8) / 5);
-			wrpoints += 82.15;
-			if (wrpoints < 500.0)
-				wrpoints = 500.0;
+			wrpoints = ((float(totalplayers) * 1));
+			wrpoints += 2000;
 		}
 		else if (tier == 3)
 		{
-			wrpoints = ((float(totalplayers) * 3.5) / 4);
-			if (wrpoints < 750.0)
-				wrpoints = 750.0;
-			else
-				wrpoints += 117;
+			wrpoints = ((float(totalplayers) * 4));
+			wrpoints += 2000;
 		}
 		else if (tier == 4)
 		{
-			wrpoints = ((float(totalplayers) * 5.74) / 4);
-			if (wrpoints < 1000.0)
-				wrpoints = 1000.0;
-			else
-				wrpoints += 164.25;
+			wrpoints = ((float(totalplayers) * 10));
+			wrpoints += 2000;
 		}
 		else if (tier == 5)
 		{
-			wrpoints = ((float(totalplayers) * 7) / 4);
-			if (wrpoints < 1250.0)
-				wrpoints = 1250.0;
-			else
-				wrpoints += 234;
+			wrpoints = ((float(totalplayers) * 20));
+			wrpoints += 2500;
 		}
 		else if (tier == 6)
 		{
-			wrpoints = ((float(totalplayers) * 14) / 4);
-			if (wrpoints < 1500.0)
-				wrpoints = 1500.0;
-			else
-				wrpoints += 328;
+			wrpoints = ((float(totalplayers) * 50));
+			wrpoints += 3000;
 		}
 		else // no tier set
 			wrpoints = 25.0;
@@ -8167,16 +8135,16 @@ public void db_selectMapImprovementCallback(Handle owner, Handle hndl, const cha
 		if (type == 0)
 		{
 			Menu mi = CreateMenu(MapImprovementMenuHandler);
-			SetMenuTitle(mi, "[Point Reward: %s]\n------------------------------\nTier: %i\n \n[Completion Points]\n \nMap Finish Points: %i\n \n[Map Improvement Groups]\n \n[Group 1] Ranks 11-%i ~ %i Pts\n[Group 2] Ranks %i-%i ~ %i Pts\n[Group 3] Ranks %i-%i ~ %i Pts\n[Group 4] Ranks %i-%i ~ %i Pts\n[Group 5] Ranks %i-%i ~ %i Pts\n \nSR Pts: %i\n \nTotal Completions: %i\n \n",szMapName, tier, mapcompletion, g1top, RoundFloat(g1points), g2bot, g2top, RoundFloat(g2points), g3bot, g3top, RoundFloat(g3points), g4bot, g4top, RoundFloat(g4points), g5bot, g5top, RoundFloat(g5points), iwrpoints, totalplayers);
+			SetMenuTitle(mi, "[Pts信息: %s]\n------------------------------\nTier: %i\n \n[完成点数]\n \n地图完成Pts: %i\n \n[可额外得到Pts的Groups]\n \n[Group 1] Ranks 11-%i ~ %i Pts\n[Group 2] Ranks %i-%i ~ %i Pts\n[Group 3] Ranks %i-%i ~ %i Pts\n[Group 4] Ranks %i-%i ~ %i Pts\n[Group 5] Ranks %i-%i ~ %i Pts\n \nWR Pts: %i\n \n总共完成人数: %i\n \n",szMapName, tier, mapcompletion, g1top, RoundFloat(g1points), g2bot, g2top, RoundFloat(g2points), g3bot, g3top, RoundFloat(g3points), g4bot, g4top, RoundFloat(g4points), g5bot, g5top, RoundFloat(g5points), iwrpoints, totalplayers);
 			// AddMenuItem(mi, "", "", ITEMDRAW_SPACER);
-			AddMenuItem(mi, szMapName, "Top 10 Points");
+			AddMenuItem(mi, szMapName, "Top 10 Pts");
 			SetMenuOptionFlags(mi, MENUFLAG_BUTTON_EXIT);
 			DisplayMenu(mi, client, MENU_TIME_FOREVER);
 		}
 		else // Draw Top 10 Points Menu
 		{
 			Menu mi = CreateMenu(MapImprovementTop10MenuHandler);
-			SetMenuTitle(mi, "[Point Reward: %s]\n------------------------------\nTier: %i\n \n[Completion Points]\n \nMap Finish Points: %i\n \n[Top 10 Points]\n \nRank 1: %i Pts\nRank 2: %i Pts\nRank 3: %i Pts\nRank 4: %i Pts\nRank 5: %i Pts\nRank 6: %i Pts\nRank 7: %i Pts\nRank 8: %i Pts\nRank 9: %i Pts\nRank 10: %i Pts\n \nTotal Completions: %i\n",szMapName, tier, mapcompletion, iwrpoints, rank2, rank3, rank4, rank5, rank6, rank7, rank8, rank9, rank10, totalplayers);
+			SetMenuTitle(mi, "[Pts信息: %s]\n------------------------------\nTier: %i\n \n[完成点数]\n \n地图完成Pts: %i\n \n[Top 10 Pts]\n \nRank 1: %i Pts\nRank 2: %i Pts\nRank 3: %i Pts\nRank 4: %i Pts\nRank 5: %i Pts\nRank 6: %i Pts\nRank 7: %i Pts\nRank 8: %i Pts\nRank 9: %i Pts\nRank 10: %i Pts\n \nTotal Completions: %i\n",szMapName, tier, mapcompletion, iwrpoints, rank2, rank3, rank4, rank5, rank6, rank7, rank8, rank9, rank10, totalplayers);
 			AddMenuItem(mi, "", "", ITEMDRAW_SPACER);
 			SetMenuOptionFlags(mi, MENUFLAG_BUTTON_EXIT);
 			DisplayMenu(mi, client, MENU_TIME_FOREVER);

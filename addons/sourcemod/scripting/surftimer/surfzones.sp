@@ -979,12 +979,12 @@ public void ZoneMenu(int client)
 	{
 		resetSelection(client);
 		Menu ckZoneMenu = new Menu(Handle_ZoneMenu);
-		ckZoneMenu.SetTitle("Zones");
-		ckZoneMenu.AddItem("", "Create a Zone");
-		ckZoneMenu.AddItem("", "Edit Zones");
-		ckZoneMenu.AddItem("", "Save Zones");
-		ckZoneMenu.AddItem("", "Edit Zone Settings");
-		ckZoneMenu.AddItem("", "Reload Zones");
+		ckZoneMenu.SetTitle("设置区域页面");
+		ckZoneMenu.AddItem("", "创建一个区域");
+		ckZoneMenu.AddItem("", "编辑区域");
+		ckZoneMenu.AddItem("", "保存区域");
+		ckZoneMenu.AddItem("", "编辑区域设置");
+		ckZoneMenu.AddItem("", "重新加载区域");
 		ckZoneMenu.ExitButton = true;
 		ckZoneMenu.Display(client, MENU_TIME_FOREVER);
 	}
@@ -1042,10 +1042,10 @@ public int Handle_ZoneMenu(Handle tMenu, MenuAction action, int client, int item
 public void EditZoneGroup(int client)
 {
 	Menu editZoneGroupMenu = new Menu(h_editZoneGroupMenu);
-	editZoneGroupMenu.SetTitle("Which zones do you want to edit?");
-	editZoneGroupMenu.AddItem("1", "Normal map zones");
-	editZoneGroupMenu.AddItem("2", "Bonus zones");
-	editZoneGroupMenu.AddItem("3", "Misc zones");
+	editZoneGroupMenu.SetTitle("你想要编辑哪个区域?");
+	editZoneGroupMenu.AddItem("1", "主线区域");
+	editZoneGroupMenu.AddItem("2", "奖励关区域");
+	editZoneGroupMenu.AddItem("3", "功能区域");
 	editZoneGroupMenu.ExitButton = true;
 	editZoneGroupMenu.Display(client, MENU_TIME_FOREVER);
 }
@@ -1089,7 +1089,7 @@ public int h_editZoneGroupMenu(Handle tMenu, MenuAction action, int client, int 
 public void ListBonusGroups(int client)
 {
 	Menu h_bonusGroupListing = new Menu(Handler_bonusGroupListing);
-	h_bonusGroupListing.SetTitle("Available Bonuses");
+	h_bonusGroupListing.SetTitle("可用的奖励关");
 
 	char listGroupName[256], ZoneId[64], Id[64];
 	if (g_mapZoneGroupCount > 1)
@@ -1136,12 +1136,12 @@ public int Handler_bonusGroupListing(Handle tMenu, MenuAction action, int client
 public void ListBonusSettings(int client)
 {
 	Menu h_ListBonusSettings = new Menu(Handler_ListBonusSettings);
-	h_ListBonusSettings.SetTitle("Settings for %s", g_szZoneGroupName[g_CurrentSelectedZoneGroup[client]]);
+	h_ListBonusSettings.SetTitle("为 %s 设置", g_szZoneGroupName[g_CurrentSelectedZoneGroup[client]]);
 
-	h_ListBonusSettings.AddItem("1", "Create a new zone");
-	h_ListBonusSettings.AddItem("2", "List Zones in this group");
-	h_ListBonusSettings.AddItem("3", "Rename Bonus");
-	h_ListBonusSettings.AddItem("4", "Delete this group");
+	h_ListBonusSettings.AddItem("1", "创建新区域");
+	h_ListBonusSettings.AddItem("2", "列出奖励关所有区域");
+	h_ListBonusSettings.AddItem("3", "重新命名");
+	h_ListBonusSettings.AddItem("4", "删除奖励关(包括记录)");
 
 	h_ListBonusSettings.ExitButton = true;
 	h_ListBonusSettings.Display(client, MENU_TIME_FOREVER);
@@ -1176,12 +1176,12 @@ public int Handler_ListBonusSettings(Handle tMenu, MenuAction action, int client
 public void checkForMissclick(int client)
 {
 	Menu h_checkForMissclick = new Menu(Handle_checkForMissclick);
-	h_checkForMissclick.SetTitle("Delete all zones in %s?", g_szZoneGroupName[g_CurrentSelectedZoneGroup[client]]);
+	h_checkForMissclick.SetTitle("确定要删除 %s 的所有区域(包括记录?", g_szZoneGroupName[g_CurrentSelectedZoneGroup[client]]);
 
-	h_checkForMissclick.AddItem("1", "NO");
-	h_checkForMissclick.AddItem("2", "NO");
-	h_checkForMissclick.AddItem("3", "YES");
-	h_checkForMissclick.AddItem("4", "NO");
+	h_checkForMissclick.AddItem("1", "否");
+	h_checkForMissclick.AddItem("2", "否");
+	h_checkForMissclick.AddItem("3", "是的");
+	h_checkForMissclick.AddItem("4", "否");
 
 	h_checkForMissclick.ExitButton = true;
 	h_checkForMissclick.Display(client, MENU_TIME_FOREVER);
@@ -1279,12 +1279,12 @@ public void renameBonusGroup(int client)
 public void SelectBonusZoneType(int client)
 {
 	Menu h_selectBonusZoneType = new Menu(Handler_selectBonusZoneType);
-	h_selectBonusZoneType.SetTitle("Select Bonus Zone Type");
+	h_selectBonusZoneType.SetTitle("选择奖励关区域类型");
 
-	h_selectBonusZoneType.AddItem("1", "Start");
-	h_selectBonusZoneType.AddItem("2", "End");
-	h_selectBonusZoneType.AddItem("3", "Stage");
-	h_selectBonusZoneType.AddItem("4", "Checkpoint");
+	h_selectBonusZoneType.AddItem("1", "起点");
+	h_selectBonusZoneType.AddItem("2", "终点");
+	h_selectBonusZoneType.AddItem("3", "关卡");
+	h_selectBonusZoneType.AddItem("4", "检查点");
 
 	h_selectBonusZoneType.ExitButton = true;
 	h_selectBonusZoneType.Display(client, MENU_TIME_FOREVER);
@@ -1321,11 +1321,11 @@ public int Handler_selectBonusZoneType(Handle tMenu, MenuAction action, int clie
 public void SelectZoneGroup(int client)
 {
 	Menu newZoneGroupMenu = new Menu(h_newZoneGroupMenu);
-	newZoneGroupMenu.SetTitle("Which zones do you want to create?");
+	newZoneGroupMenu.SetTitle("你想创建什么区域?");
 
-	newZoneGroupMenu.AddItem("1", "Normal map zones");
-	newZoneGroupMenu.AddItem("2", "Bonus zones");
-	newZoneGroupMenu.AddItem("3", "Misc zones");
+	newZoneGroupMenu.AddItem("1", "主线区域");
+	newZoneGroupMenu.AddItem("2", "奖励关区域");
+	newZoneGroupMenu.AddItem("3", "功能区域");
 
 	newZoneGroupMenu.ExitButton = true;
 	newZoneGroupMenu.Display(client, MENU_TIME_FOREVER);
@@ -1371,13 +1371,13 @@ public int h_newZoneGroupMenu(Handle tMenu, MenuAction action, int client, int i
 public void StartBonusZoneCreation(int client)
 {
 	Menu CreateBonusFirst = new Menu(H_CreateBonusFirst);
-	CreateBonusFirst.SetTitle("Create the Bonus Start Zone:");
+	CreateBonusFirst.SetTitle("创建奖励关起点区域:");
 	if (g_Editing[client] == 0)
-		CreateBonusFirst.AddItem("1", "Start Drawing");
+		CreateBonusFirst.AddItem("1", "开始画线");
 	else
 	{
-		CreateBonusFirst.AddItem("1", "Restart Drawing");
-		CreateBonusFirst.AddItem("2", "Save Bonus Start Zone");
+		CreateBonusFirst.AddItem("1", "重新画线");
+		CreateBonusFirst.AddItem("2", "保存奖励关起点区域");
 
 	}
 	CreateBonusFirst.ExitButton = true;
@@ -1429,13 +1429,13 @@ public int H_CreateBonusFirst(Handle tMenu, MenuAction action, int client, int i
 public void EndBonusZoneCreation(int client)
 {
 	Menu CreateBonusSecond = new Menu(H_CreateBonusSecond);
-	CreateBonusSecond.SetTitle("Create the Bonus End Zone:");
+	CreateBonusSecond.SetTitle("创建奖励关终点区域:");
 	if (g_Editing[client] == 2)
-		CreateBonusSecond.AddItem("1", "Start Drawing");
+		CreateBonusSecond.AddItem("1", "开始画线");
 	else
 	{
-		CreateBonusSecond.AddItem("1", "Restart Drawing");
-		CreateBonusSecond.AddItem("2", "Save Bonus End Zone");
+		CreateBonusSecond.AddItem("1", "重新画线");
+		CreateBonusSecond.AddItem("2", "保存奖励关终点区域");
 	}
 	CreateBonusSecond.ExitButton = true;
 	CreateBonusSecond.Display(client, MENU_TIME_FOREVER);
@@ -1500,22 +1500,22 @@ public void SaveBonusZones(int client)
 public void SelectNormalZoneType(int client)
 {
 	Menu SelectNormalZoneMenu = new Menu(Handle_SelectNormalZoneType);
-	SelectNormalZoneMenu.SetTitle("Select Zone Type");
-	SelectNormalZoneMenu.AddItem("1", "Start");
-	SelectNormalZoneMenu.AddItem("2", "End");
+	SelectNormalZoneMenu.SetTitle("选择区域类型");
+	SelectNormalZoneMenu.AddItem("1", "起点");
+	SelectNormalZoneMenu.AddItem("2", "终点");
 	if (g_mapZonesTypeCount[g_CurrentSelectedZoneGroup[client]][3] == 0 && g_mapZonesTypeCount[g_CurrentSelectedZoneGroup[client]][4] == 0)
 	{
-		SelectNormalZoneMenu.AddItem("3", "Stage");
-		SelectNormalZoneMenu.AddItem("4", "Checkpoint");
+		SelectNormalZoneMenu.AddItem("3", "关卡");
+		SelectNormalZoneMenu.AddItem("4", "检查点");
 	}
 	else if (g_mapZonesTypeCount[g_CurrentSelectedZoneGroup[client]][3] > 0 && g_mapZonesTypeCount[g_CurrentSelectedZoneGroup[client]][4] == 0)
 	{
-		SelectNormalZoneMenu.AddItem("3", "Stage");
+		SelectNormalZoneMenu.AddItem("3", "关卡");
 	}
 	else if (g_mapZonesTypeCount[g_CurrentSelectedZoneGroup[client]][3] == 0 && g_mapZonesTypeCount[g_CurrentSelectedZoneGroup[client]][4] > 0)
-		SelectNormalZoneMenu.AddItem("4", "Checkpoint");
+		SelectNormalZoneMenu.AddItem("4", "检查点");
 
-	SelectNormalZoneMenu.AddItem("hook", "Hook Zone");
+	SelectNormalZoneMenu.AddItem("hook", "可借用区域");
 
 	SelectNormalZoneMenu.ExitButton = true;
 	SelectNormalZoneMenu.Display(client, MENU_TIME_FOREVER);
@@ -1555,25 +1555,25 @@ public int Handle_SelectNormalZoneType(Handle tMenu, MenuAction action, int clie
 public void ZoneSettings(int client)
 {
 	Menu ZoneSettingMenu = new Menu(Handle_ZoneSettingMenu);
-	ZoneSettingMenu.SetTitle("Global Zone Settings");
+	ZoneSettingMenu.SetTitle("通用区域设置");
 	switch (GetConVarInt(g_hZoneDisplayType))
 	{
 		case 0:
-			ZoneSettingMenu.AddItem("1", "Visible: Nothing");
+			ZoneSettingMenu.AddItem("1", "线条可视设置：不可视");
 		case 1:
-			ZoneSettingMenu.AddItem("1", "Visible: Lower edges");
+			ZoneSettingMenu.AddItem("1", "线条可视设置：显示一半");
 		case 2:
-			ZoneSettingMenu.AddItem("1", "Visible: All sides");
+			ZoneSettingMenu.AddItem("1", "线条可视设置：全部显示");
 	}
 
 	switch (GetConVarInt(g_hZonesToDisplay))
 	{
 		case 1:
-			ZoneSettingMenu.AddItem("2", "Draw Zones: Start & End");
+			ZoneSettingMenu.AddItem("2", "线条区域显示设置: 起点 & 终点");
 		case 2:
-			ZoneSettingMenu.AddItem("2", "Draw Zones: Start, End, Stage, Bonus");
+			ZoneSettingMenu.AddItem("2", "线条区域显示设置: 起点, 终点, 关卡,奖励关");
 		case 3:
-			ZoneSettingMenu.AddItem("2", "Draw Zones: All zones");
+			ZoneSettingMenu.AddItem("2", "线条区域显示设置: 所有区域");
 	}
 	ZoneSettingMenu.ExitButton = true;
 	ZoneSettingMenu.Display(client, MENU_TIME_FOREVER);
@@ -1624,16 +1624,16 @@ public int Handle_ZoneSettingMenu(Handle tMenu, MenuAction action, int client, i
 public void SelectMiscZoneType(int client)
 {
 	Menu SelectZoneMenu = new Menu(Handle_SelectMiscZoneType);
-	SelectZoneMenu.SetTitle("Select Misc Zone Type");
+	SelectZoneMenu.SetTitle("选择功能区域类型");
 
-	SelectZoneMenu.AddItem("6", "TeleToStart");
-	SelectZoneMenu.AddItem("7", "Validator");
-	SelectZoneMenu.AddItem("8", "Checker");
+	SelectZoneMenu.AddItem("6", "传送到起点");
+	SelectZoneMenu.AddItem("7", "验证器");
+	SelectZoneMenu.AddItem("8", "检查器");
 	// fluffys add antijump and antiduck zones to menu
-	SelectZoneMenu.AddItem("9", "AntiJump");
-	SelectZoneMenu.AddItem("10", "AntiDuck");
-	SelectZoneMenu.AddItem("11", "MaxSpeed");
-	SelectZoneMenu.AddItem("0", "Stop");
+	SelectZoneMenu.AddItem("9", "防跳");
+	SelectZoneMenu.AddItem("10", "防蹲");
+	SelectZoneMenu.AddItem("11", "限速");
+	SelectZoneMenu.AddItem("0", "停止计时器");
 
 	SelectZoneMenu.ExitButton = true;
 	SelectZoneMenu.Display(client, MENU_TIME_FOREVER);
@@ -1691,7 +1691,7 @@ public int Handle_EditZoneTypeId(Handle tMenu, MenuAction action, int client, in
 public void ListZones(int client, bool mapzones)
 {
 	Menu ZoneList = new Menu(MenuHandler_ZoneModify);
-	ZoneList.SetTitle("Available Zones");
+	ZoneList.SetTitle("可用的区域");
 
 	char listZoneName[256], ZoneId[64], Id[64];
 	if (g_mapZonesCount > 0)
@@ -1787,51 +1787,51 @@ public void EditorMenu(int client)
 	Menu editMenu = new Menu(MenuHandler_Editor);
 	// If a zone is selected
 	if (g_ClientSelectedZone[client] != -1)
-		editMenu.SetTitle("Editing Zone: %s-%i", g_szZoneDefaultNames[g_CurrentZoneType[client]], g_mapZones[g_ClientSelectedZone[client]][zoneTypeId]);
+		editMenu.SetTitle("编辑区域中: %s-%i", g_szZoneDefaultNames[g_CurrentZoneType[client]], g_mapZones[g_ClientSelectedZone[client]][zoneTypeId]);
 	else
-		editMenu.SetTitle("Creating a New %s Zone", g_szZoneDefaultNames[g_CurrentZoneType[client]]);
+		editMenu.SetTitle("创建一个新的 %s 区域中", g_szZoneDefaultNames[g_CurrentZoneType[client]]);
 
 	// If creating a completely new zone, or editing an existing one
 	if (g_Editing[client] == 0)
-		editMenu.AddItem("", "Start Drawing the Zone");
+		editMenu.AddItem("", "开始画线");
 	else
-		editMenu.AddItem("", "Restart the Zone Drawing");
+		editMenu.AddItem("", "重新画线");
 
 	// If editing an existing zone
 	if (g_Editing[client] > 0)
 	{
-		editMenu.AddItem("", "Set zone type");
+		editMenu.AddItem("", "设置区域类型");
 
 		// If editing is paused
 		if (g_Editing[client] == 2)
-			editMenu.AddItem("", "Continue Editing");
+			editMenu.AddItem("", "继续编辑");
 		else
-			editMenu.AddItem("", "Pause Editing");
+			editMenu.AddItem("", "暂停编辑");
 
-		editMenu.AddItem("", "Delete Zone");
-		editMenu.AddItem("", "Save Zone");
+		editMenu.AddItem("", "删除区域");
+		editMenu.AddItem("", "保存区域");
 
 		switch (g_CurrentZoneTeam[client])
 		{
 			case 0:
 			{
-				editMenu.AddItem("", "Set Zone Yellow");
+				editMenu.AddItem("", "将线设置为黄色");
 			}
 			case 1:
 			{
-				editMenu.AddItem("", "Set Zone Green");
+				editMenu.AddItem("", "将线设置为绿色");
 			}
 			case 2:
 			{
-				editMenu.AddItem("", "Set Zone Red");
+				editMenu.AddItem("", "将线设置为红色");
 			}
 			case 3:
 			{
-				editMenu.AddItem("", "Set Zone Blue");
+				editMenu.AddItem("", "将线设置为蓝色");
 			}
 		}
-		editMenu.AddItem("", "Go to Zone");
-		editMenu.AddItem("", "Strech Zone");
+		editMenu.AddItem("", "前往区域");
+		editMenu.AddItem("", "编辑区域范围");
 
 		if (g_ClientSelectedZone[client] != -1)
 		{
@@ -1846,9 +1846,9 @@ public void EditorMenu(int client)
 			
 			// One jump limit
 			if (g_mapZones[g_ClientSelectedZone[client]][oneJumpLimit] == 1)
-				editMenu.AddItem("", "Disable One Jump Limit");
+				editMenu.AddItem("", "关闭一跳限制");
 			else
-				editMenu.AddItem("", "Enable One Jump Limit");
+				editMenu.AddItem("", "开启一跳限制");
 			
 			// Prespeed
 			Format(szMenuItem, sizeof(szMenuItem), "Prespeed: %f", g_mapZones[g_ClientSelectedZone[client]][preSpeed]);
@@ -2020,22 +2020,22 @@ public void ScaleMenu(int client)
 {
 	g_Editing[client] = 3;
 	Menu ckScaleMenu = new Menu(MenuHandler_Scale);
-	ckScaleMenu.SetTitle("Strech Zone");
+	ckScaleMenu.SetTitle("区域范围编辑");
 
 	if (g_ClientSelectedPoint[client] == 1)
 		ckScaleMenu.AddItem("", "Point B");
 	else
 		ckScaleMenu.AddItem("", "Point A");
 
-	ckScaleMenu.AddItem("", "+ Width");
-	ckScaleMenu.AddItem("", "- Width");
-	ckScaleMenu.AddItem("", "+ Length");
-	ckScaleMenu.AddItem("", "- Length");
-	ckScaleMenu.AddItem("", "+ Height");
-	ckScaleMenu.AddItem("", "- Height");
-
+	ckScaleMenu.AddItem("", "+ 宽度");
+	ckScaleMenu.AddItem("", "- 宽度");
+	ckScaleMenu.AddItem("", "+ 长度");
+	ckScaleMenu.AddItem("", "- 长度");
+	ckScaleMenu.AddItem("", "+ 高度");
+	ckScaleMenu.AddItem("", "- 高度");
+	
 	char ScaleSize[128];
-	Format(ScaleSize, sizeof(ScaleSize), "Scale Size %f", g_AvaliableScales[g_ClientSelectedScale[client]]);
+	Format(ScaleSize, sizeof(ScaleSize), "比例大小 %f", g_AvaliableScales[g_ClientSelectedScale[client]]);
 	ckScaleMenu.AddItem("", ScaleSize);
 
 	ckScaleMenu.ExitButton = true;
@@ -2106,17 +2106,13 @@ public void PrespeedMenu(int client)
 	Menu menu = new Menu(MenuHandler_Prespeed);
 	char szTitle[128];
 	if ( g_mapZones[g_ClientSelectedZone[client]][preSpeed] == 0.0)
-		Format(szTitle, sizeof(szTitle), "Zone Prespeed (No Limit)");
+		Format(szTitle, sizeof(szTitle), "区域Prespeed (无限制)");
 	else
-		Format(szTitle, sizeof(szTitle), "Zone Prespeed (%f)", g_mapZones[g_ClientSelectedZone[client]][preSpeed]);
+		Format(szTitle, sizeof(szTitle), "区域Prespeed (%f)", g_mapZones[g_ClientSelectedZone[client]][preSpeed]);
 	SetMenuTitle(menu, szTitle);
 
-	AddMenuItem(menu, "285.0", "285.0");
-	AddMenuItem(menu, "300.0", "300.0");
-	AddMenuItem(menu, "350.0", "350.0");
-	AddMenuItem(menu, "500.0", "500.0");
-	AddMenuItem(menu, "-1.0", "Custom Limit");
-	AddMenuItem(menu, "-2.0", "Remove Limit");
+	AddMenuItem(menu, "-1.0", "自定义限制");
+	AddMenuItem(menu, "-2.0", "取消限制");
 
 	SetMenuExitBackButton(menu, true);
 	DisplayMenu(menu, client, MENU_TIME_FOREVER);
@@ -2157,7 +2153,7 @@ public int MenuHandler_Prespeed(Handle tMenu, MenuAction action, int client, int
 public void ChangeZonesHook(int client)
 {
 	Menu menu = CreateMenu(ChangeZonesHookMenuHandler);
-	SetMenuTitle(menu, "Select a trigger");
+	SetMenuTitle(menu, "选择一块trigger");
 
 	for (int i = 0; i < GetArraySize(g_TriggerMultipleList); i++)
 	{
@@ -2190,9 +2186,9 @@ public void SelectTrigger(int client, int index)
 
 	char szParam[128];
 	IntToString(index, szParam, sizeof(szParam));
-	AddMenuItem(menu, szParam, "Teleport to zone");
-	AddMenuItem(menu, szParam, "Hook zone");
-	AddMenuItem(menu, szParam, "Back");
+	AddMenuItem(menu, szParam, "传送到该区域");
+	AddMenuItem(menu, szParam, "借用区域");
+	AddMenuItem(menu, szParam, "返回");
 
 	SetMenuOptionFlags(menu, MENUFLAG_BUTTON_EXIT);
 	DisplayMenu(menu, client, MENU_TIME_FOREVER);
@@ -2305,10 +2301,10 @@ public void ClearZonesMenu(int client)
 {
 	Menu hClearZonesMenu = new Menu(MenuHandler_ClearZones);
 
-	hClearZonesMenu.SetTitle("Are you sure, you want to clear all zones on this map?");
-	hClearZonesMenu.AddItem("", "NO GO BACK!");
-	hClearZonesMenu.AddItem("", "NO GO BACK!");
-	hClearZonesMenu.AddItem("", "YES! DO IT!");
+	hClearZonesMenu.SetTitle("你确定要删掉这图的所有区域?");
+	hClearZonesMenu.AddItem("", "不要!");
+	hClearZonesMenu.AddItem("", "不要!");
+	hClearZonesMenu.AddItem("", "是的gkd!");
 
 	hClearZonesMenu.Display(client, 20);
 }

@@ -18,36 +18,36 @@ public void MapSettingsMenu(int client)
 {
 	Menu menu = CreateMenu(MapSettingsMenuHandler);
 	char szBuffer[256];
-	Format(szBuffer, sizeof(szBuffer), "Map Settings - %s\n \n", g_szMapName);
+	Format(szBuffer, sizeof(szBuffer), "地图参数设置 - %s\n \n", g_szMapName);
 	SetMenuTitle(menu, szBuffer);
 
-	Format(szBuffer, sizeof(szBuffer), "Tier: %d", g_iMapTier);
+	Format(szBuffer, sizeof(szBuffer), "难度: %d", g_iMapTier);
 	AddMenuItem(menu, "", szBuffer);
 
 	if (g_bRankedMap)
-		AddMenuItem(menu, "", "Ranked");
+		AddMenuItem(menu, "", "开启排名系统");
 	else
-		AddMenuItem(menu, "", "Unranked");
+		AddMenuItem(menu, "", "关闭排名系统");
 
-	Format(szBuffer, sizeof(szBuffer), "Max Velocity: %f", GetConVarFloat(g_hMaxVelocity));
+	Format(szBuffer, sizeof(szBuffer), "最大速度: %f", GetConVarFloat(g_hMaxVelocity));
 	AddMenuItem(menu, "", szBuffer);
 
 	if (g_fAnnounceRecord == 1)
-		AddMenuItem(menu, "", "Announce Finishes: PBs Only");
+		AddMenuItem(menu, "", "公告设置：只允许个人记录");
 	else if (g_fAnnounceRecord == 2)
-		AddMenuItem(menu, "", "Announce Finishes: WRs Only");
+		AddMenuItem(menu, "", "公告设置：只允许服务器记录");
 	else
-		AddMenuItem(menu, "", "Announce Finishes: All");
+		AddMenuItem(menu, "", "公告设置：所有记录");
 
 	if (g_bGravityFix)
-		AddMenuItem(menu, "", "Gravity Fix Enabled");
+		AddMenuItem(menu, "", "重力修复开启");
 	else
-		AddMenuItem(menu, "", "Gravity Fix Disabled");
+		AddMenuItem(menu, "", "重力修复关闭");
 
 	if (g_bhasStages)
-		AddMenuItem(menu, "", "Unlimit prespeed for all stage zones");
+		AddMenuItem(menu, "", "取消对所有的关卡prespeed限制");
 	else
-		AddMenuItem(menu, "", "Unlimit prespeed for all stage zones", ITEMDRAW_DISABLED);
+		AddMenuItem(menu, "", "取消对所有的关卡prespeed限制", ITEMDRAW_DISABLED);
 
 	SetMenuOptionFlags(menu, MENUFLAG_BUTTON_EXIT);
 	DisplayMenu(menu, client, MENU_TIME_FOREVER);

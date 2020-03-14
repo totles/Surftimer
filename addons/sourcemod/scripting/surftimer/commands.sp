@@ -5,163 +5,162 @@
 void CreateCommands()
 {
 	// Client Commands
-	RegConsoleCmd("sm_usp", Client_Usp, "[SurfTimer] spawns a usp silencer");
-	RegConsoleCmd("sm_glock", Client_Glock, "[SurfTimer] spawns a glock");
-	RegConsoleCmd("sm_avg", Client_Avg, "[SurfTimer] prints in chat the average time of the current map");
-	RegConsoleCmd("sm_hidechat", Client_HideChat, "[SurfTimer] hides your ingame chat");
-	RegConsoleCmd("sm_hideweapon", Client_HideWeapon, "[SurfTimer] hides your weapon model");
-	RegConsoleCmd("sm_disarm", Client_HideWeapon, "[SurfTimer] hides your weapon model");
-	RegAdminCmd("sm_goto", Client_GoTo, ADMFLAG_CUSTOM2, "[SurfTimer] teleports you to a selected player");
-	RegConsoleCmd("sm_sound", Client_QuakeSounds, "[SurfTimer] on/off quake sounds");
-	RegConsoleCmd("sm_bhop", Client_AutoBhop, "[SurfTimer] on/off autobhop");
-	RegConsoleCmd("sm_flashlight", Client_Flashlight, "[SurfTimer] on/off flashlight");
-	RegConsoleCmd("sm_maptop", Client_MapTop, "[SurfTimer] displays local map top for a given map");
-	RegConsoleCmd("sm_wr", Client_Wr, "[SurfTimer] prints records wr in chat");
-	RegConsoleCmd("sm_wrb", Client_Wrb, "[SurfTimer] prints records wrb in chat");
-	RegConsoleCmd("sm_spec", Client_Spec, "[SurfTimer] chooses a player who you want to spectate and switch you to spectators");
-	RegConsoleCmd("sm_watch", Client_Spec, "[SurfTimer] chooses a player who you want to spectate and switch you to spectators");
-	RegConsoleCmd("sm_spectate", Client_Spec, "[SurfTimer] chooses a player who you want to spectate and switch you to spectators");
-	RegConsoleCmd("sm_helpmenu", Client_Help, "[SurfTimer] help menu which displays all SurfTimer commands");
-	RegConsoleCmd("sm_help", Client_Help, "[SurfTimer] help menu which displays all SurfTimer commands");
-	RegConsoleCmd("sm_profile", Client_Profile, "[SurfTimer] opens a player profile");
-	RegConsoleCmd("sm_options", Client_OptionMenu, "[SurfTimer] opens options menu");
-	RegConsoleCmd("sm_top", Client_Top, "[SurfTimer] displays top rankings (Top 100 Players, Top 50 overall)");
-	RegConsoleCmd("sm_topsurfers", Client_Top, "[SurfTimer] displays top rankings (Top 100 Players, Top 50 overall)");
-	RegConsoleCmd("sm_bonustop", Client_BonusTop, "[SurfTimer] displays top rankings of the bonus");
-	RegConsoleCmd("sm_btop", Client_BonusTop, "[SurfTimer] displays top rankings of the bonus");
-	RegConsoleCmd("sm_stop", Client_Stop, "[SurfTimer] stops your timer");
-	RegConsoleCmd("sm_ranks", Client_Ranks, "[SurfTimer] Displays a menu with available player ranks");
-	RegConsoleCmd("sm_pause", Client_Pause, "[SurfTimer] on/off pause (timer on hold and movement frozen)");
-	RegConsoleCmd("sm_latest", Client_Latest, "[SurfTimer] shows latest map records");
-	RegConsoleCmd("sm_rr", Client_Latest, "[SurfTimer] shows latest map records");
-	RegConsoleCmd("sm_rb", Client_Latest, "[SurfTimer] shows latest map records");
-	RegConsoleCmd("sm_hide", Client_Hide, "[SurfTimer] on/off - hides other players");
-	RegConsoleCmd("sm_togglecheckpoints", ToggleCheckpoints, "[SurfTimer] on/off - Enable player checkpoints");
-	RegConsoleCmd("+noclip", NoClip, "[SurfTimer] Player noclip on");
-	RegConsoleCmd("-noclip", UnNoClip, "[SurfTimer] Player noclip off");
-	RegConsoleCmd("sm_nc", Command_ckNoClip, "[SurfTimer] Player noclip on/off");
+	RegConsoleCmd("sm_usp", Client_Usp, "[SurfTimer] 得到usp");
+	RegConsoleCmd("sm_glock", Client_Glock, "[SurfTimer] 得到glock");
+	RegConsoleCmd("sm_avg", Client_Avg, "[SurfTimer] 在公屏上显示该地图主线和奖励关平均时间");
+	RegConsoleCmd("sm_hidechat", Client_HideChat, "[SurfTimer] 隐藏你的聊天框");
+	RegConsoleCmd("sm_hideweapon", Client_HideWeapon, "[SurfTimer] 隐藏你的手摸");
+	RegConsoleCmd("sm_disarm", Client_HideWeapon, "[SurfTimer] 隐藏你的手摸");
+	RegAdminCmd("sm_goto", Client_GoTo, ADMFLAG_CUSTOM2, "[SurfTimer] 传送到指定玩家");
+	RegConsoleCmd("sm_sound", Client_QuakeSounds, "[SurfTimer] 开启/关闭雷神音效");
+	RegConsoleCmd("sm_bhop", Client_AutoBhop, "[SurfTimer] 开启/关闭自动连跳");
+	RegConsoleCmd("sm_flashlight", Client_Flashlight, "[SurfTimer] 开启/关闭手电筒");
+	RegConsoleCmd("sm_maptop", Client_MapTop, "[SurfTimer] 显示地图记录");
+	RegConsoleCmd("sm_wr", Client_Wr, "[SurfTimer] 公屏上显示主线最佳记录");
+	RegConsoleCmd("sm_wrb", Client_Wrb, "[SurfTimer] 公屏上显示奖励关最佳记录");
+	RegConsoleCmd("sm_spec", Client_Spec, "[SurfTimer] 选择你要观察的玩家");
+	RegConsoleCmd("sm_watch", Client_Spec, "[SurfTimer] 选择你要观察的玩家");
+	RegConsoleCmd("sm_spectate", Client_Spec, "[SurfTimer] 选择你要观察的玩家");
+	RegConsoleCmd("sm_helpmenu", Client_Help, "[SurfTimer] 显示本页面");
+	RegConsoleCmd("sm_help", Client_Help, "[SurfTimer] 废话");
+	RegConsoleCmd("sm_profile", Client_Profile, "[SurfTimer] 打开玩家个人信息");
+	RegConsoleCmd("sm_options", Client_OptionMenu, "[SurfTimer] 打开设置界面");
+	RegConsoleCmd("sm_top", Client_Top, "[SurfTimer] 显示前100玩家排名/前50地图排名");
+	RegConsoleCmd("sm_topsurfers", Client_Top, "[SurfTimer] 显示前100玩家排名/前50地图排名");
+	RegConsoleCmd("sm_bonustop", Client_BonusTop, "[SurfTimer] 显示前50奖励关排名");
+	RegConsoleCmd("sm_btop", Client_BonusTop, "[SurfTimer] 显示前50奖励关排名");
+	RegConsoleCmd("sm_stop", Client_Stop, "[SurfTimer] 停止计时器");
+	RegConsoleCmd("sm_ranks", Client_Ranks, "[SurfTimer] 显示排位划分段");
+	RegConsoleCmd("sm_pause", Client_Pause, "[SurfTimer] 开启/关闭暂停功能");
+	RegConsoleCmd("sm_latest", Client_Latest, "[SurfTimer] 显示最近被刷的地图记录");
+	RegConsoleCmd("sm_rr", Client_Latest, "[SurfTimer] 显示最近被刷的地图记录");
+	RegConsoleCmd("sm_rb", Client_Latest, "[SurfTimer] 显示最近被刷的地图记录");
+	RegConsoleCmd("sm_hide", Client_Hide, "[SurfTimer] on/off - 开启/关闭隐藏玩家功能");
+	RegConsoleCmd("sm_togglecheckpoints", ToggleCheckpoints, "[SurfTimer] 开启/关闭玩家通过检查点的通知");
+	RegConsoleCmd("+noclip", NoClip, "[SurfTimer] 启用穿墙");
+	RegConsoleCmd("-noclip", UnNoClip, "[SurfTimer] 关闭穿墙");
+	RegConsoleCmd("sm_nc", Command_ckNoClip, "[SurfTimer] 启用/关闭穿墙");
 
 	// Teleportation Commands
-	RegConsoleCmd("sm_stages", Command_SelectStage, "[SurfTimer] Opens up the stage selector");
-	RegConsoleCmd("sm_r", Command_Restart, "[SurfTimer] Teleports player back to the start");
-	RegConsoleCmd("sm_restart", Command_Restart, "[SurfTimer] Teleports player back to the start");
-	RegConsoleCmd("sm_start", Command_Restart, "[SurfTimer] Teleports player back to the start");
-	RegConsoleCmd("sm_b", Command_ToBonus, "[SurfTimer] Teleports player to the start of a bonus");
-	RegConsoleCmd("sm_bonus", Command_ToBonus, "[SurfTimer] Teleports player to the start of a bonus");
-	RegConsoleCmd("sm_bonuses", Command_ListBonuses, "[SurfTimer] Displays a list of bonuses in current map");
-	RegConsoleCmd("sm_s", Command_ToStage, "[SurfTimer] Teleports player to the selected stage");
-	RegConsoleCmd("sm_stage", Command_ToStage, "[SurfTimer] Teleports player to the selected stage");
-	RegConsoleCmd("sm_end", Command_ToEnd, "[SurfTimer] Teleports player to the end zone");
+	RegConsoleCmd("sm_stages", Command_SelectStage, "[SurfTimer] 选择要传送的关卡");
+	RegConsoleCmd("sm_r", Command_Restart, "[SurfTimer] 传送到起点");
+	RegConsoleCmd("sm_restart", Command_Restart, "[SurfTimer] 传送到起点");
+	RegConsoleCmd("sm_start", Command_Restart, "[SurfTimer] 传送到起点");
+	RegConsoleCmd("sm_b", Command_ToBonus, "[SurfTimer] 传送到奖励关起点");
+	RegConsoleCmd("sm_bonus", Command_ToBonus, "[SurfTimer] 传送到奖励关起点");
+	RegConsoleCmd("sm_bonuses", Command_ListBonuses, "[SurfTimer] 选择要传送的奖励关");
+	RegConsoleCmd("sm_s", Command_ToStage, "[SurfTimer] 选择要传送的关卡");
+	RegConsoleCmd("sm_stage", Command_ToStage, "[SurfTimer] 选择要传送的关卡");
+	RegConsoleCmd("sm_end", Command_ToEnd, "[SurfTimer] 传送到终点");
 
 	// MISC
-	RegConsoleCmd("sm_tier", Command_Tier, "[SurfTimer] Prints information on the current map");
-	RegConsoleCmd("sm_maptier", Command_Tier, "[SurfTimer] Prints information on the current map");
-	RegConsoleCmd("sm_mapinfo", Command_Tier, "[SurfTimer] Prints information on the current map");
-	RegConsoleCmd("sm_m", Command_Tier, "[SurfTimer] Prints information on the current map");
-	RegConsoleCmd("sm_difficulty", Command_Tier, "[SurfTimer] Prints information on the current map");
-	RegConsoleCmd("sm_howto", Command_HowTo, "[SurfTimer] Displays a youtube video on how to surf");
+	RegConsoleCmd("sm_tier", Command_Tier, "[SurfTimer] 公屏上显示当前地图难度");
+	RegConsoleCmd("sm_maptier", Command_Tier, "[SurfTimer] 公屏上显示当前地图难度");
+	RegConsoleCmd("sm_mapinfo", Command_Tier, "[SurfTimer] 公屏上显示当前地图难度");
+	RegConsoleCmd("sm_m", Command_Tier, "[SurfTimer] 公屏上显示当前地图难度");
+	RegConsoleCmd("sm_difficulty", Command_Tier, "[SurfTimer] 公屏上显示当前地图难度");
+	RegConsoleCmd("sm_howto", Command_HowTo, "[SurfTimer] B站av4817393看滑翔教程");
 
 
 	// Teleport to the start of the stage
-	RegConsoleCmd("sm_stuck", Command_Teleport, "[SurfTimer] Teleports player back to the start of the stage");
-	RegConsoleCmd("sm_back", Command_Teleport, "[SurfTimer] Teleports player back to the start of the stage");
-	RegConsoleCmd("sm_rs", Command_Teleport, "[SurfTimer] Teleports player back to the start of the stage");
-	RegConsoleCmd("sm_play", Command_Teleport, "[SurfTimer] Teleports player back to the start");
-	RegConsoleCmd("sm_spawn", Command_Teleport, "[SurfTimer] Teleports player back to the start");
+	RegConsoleCmd("sm_stuck", Command_Teleport, "[SurfTimer] 传送到当前关卡的起点");
+	RegConsoleCmd("sm_back", Command_Teleport, "[SurfTimer] 传送到当前关卡的起点");
+	RegConsoleCmd("sm_rs", Command_Teleport, "[SurfTimer] 传送到当前关卡的起点");
+	RegConsoleCmd("sm_play", Command_Teleport, "[SurfTimer] 传送到当前关卡的起点");
+	RegConsoleCmd("sm_spawn", Command_Teleport, "[SurfTimer] 传送到当前关卡的起点");
 
 	// Player Checkpoints
-	RegConsoleCmd("sm_teleport", Command_goToPlayerCheckpoint, "[SurfTimer] Teleports player to his last checkpoint");
-	RegConsoleCmd("sm_tele", Command_goToPlayerCheckpoint, "[SurfTimer] Teleports player to his last checkpoint");
-	RegConsoleCmd("sm_prac", Command_goToPlayerCheckpoint, "[SurfTimer] Teleports player to his last checkpoint");
-	RegConsoleCmd("sm_practice", Command_goToPlayerCheckpoint, "[SurfTimer] Teleports player to his last checkpoint");
-	RegConsoleCmd("sm_loadloc", Command_goToPlayerCheckpoint, "[SurfTimer] Teleports player to his last checkpoint");
-	RegConsoleCmd("sm_cp", Command_createPlayerCheckpoint, "[SurfTimer] Creates a checkpoint, where the player can teleport back to");
-	RegConsoleCmd("sm_checkpoint", Command_createPlayerCheckpoint, "[SurfTimer] Creates a checkpoint, where the player can teleport back to");
-	RegConsoleCmd("sm_saveloc", Command_createPlayerCheckpoint, "[SurfTimer] Creates a checkpoint, where the player can teleport back to");
-	RegConsoleCmd("sm_savelocs", Command_SaveLocList);
-	RegConsoleCmd("sm_loclist", Command_SaveLocList);
-	RegConsoleCmd("sm_normal", Command_normalMode, "[SurfTimer] Switches player back to normal mode.");
-	RegConsoleCmd("sm_n", Command_normalMode, "[SurfTimer] Switches player back to normal mode.");
+	RegConsoleCmd("sm_teleport", Command_goToPlayerCheckpoint, "[SurfTimer] 传送到你最新设置的检查点");
+	RegConsoleCmd("sm_tele", Command_goToPlayerCheckpoint, "[SurfTimer] 传送到你最新设置的检查点");
+	RegConsoleCmd("sm_prac", Command_goToPlayerCheckpoint, "[SurfTimer] 传送到你最新设置的检查点");
+	RegConsoleCmd("sm_practice", Command_goToPlayerCheckpoint, "[SurfTimer] 传送到你最新设置的检查点");
+	RegConsoleCmd("sm_loadloc", Command_goToPlayerCheckpoint, "[SurfTimer] 传送到你最新设置的检查点");
+	RegConsoleCmd("sm_cp", Command_createPlayerCheckpoint, "[SurfTimer] 创建检查点，使用传送指令到达");
+	RegConsoleCmd("sm_checkpoint", Command_createPlayerCheckpoint, "[SurfTimer] 创建检查点，使用传送指令到达");
+	RegConsoleCmd("sm_saveloc", Command_createPlayerCheckpoint, "[SurfTimer] 创建检查点，使用传送指令到达");
+	RegConsoleCmd("sm_savelocs", Command_SaveLocList,"[SurfTimer] 显示存点的数字id和玩家");
+	RegConsoleCmd("sm_loclist", Command_SaveLocList,"[SurfTimer] 显示存点的数字id和玩家");
+	RegConsoleCmd("sm_normal", Command_normalMode, "[SurfTimer] 切换到普通模式.");
+	RegConsoleCmd("sm_n", Command_normalMode, "[SurfTimer] 切换到普通模式.");
 
 	// Admin Commands
-	RegConsoleCmd("sm_ckadmin", Admin_ckPanel, "[SurfTimer] Displays the SurfTimer admin menu panel");
-	RegConsoleCmd("sm_refreshprofile", Admin_RefreshProfile, "[SurfTimer] Recalculates player profile for given steam id");
-	RegConsoleCmd("sm_clearassists", Admin_ClearAssists, "[SurfTimer] Clears assist points (map progress) from all players");
+	RegConsoleCmd("sm_ckadmin", Admin_ckPanel, "[SurfTimer] 显示ckadmin菜单");
+	RegConsoleCmd("sm_refreshprofile", Admin_RefreshProfile, "[SurfTimer] 刷新所提供steamid的个人信息");
 
 	// Zoning/Mapsetting Commands
-	RegConsoleCmd("sm_zones", Command_Zones, "[SurfTimer] [zoner] Opens up the zone creation menu.");
-	RegConsoleCmd("sm_hookzone", Command_HookZones, "[SurfTimer] [zoner] Opens up zone hook creation menu.");
-	RegConsoleCmd("sm_addmaptier", Admin_insertMapTier, "[SurfTimer] [zoner] Changes maps tier");
-	RegConsoleCmd("sm_amt", Admin_insertMapTier, "[SurfTimer] [zoner] Changes maps tier");
-	RegConsoleCmd("sm_addspawn", Admin_insertSpawnLocation, "[SurfTimer] [zoner] Changes the position !r takes players to");
-	RegConsoleCmd("sm_delspawn", Admin_deleteSpawnLocation, "[SurfTimer] [zoner] Removes custom !r position");
-	RegConsoleCmd("sm_mapsettings", Admin_MapSettings, "[SurfTimer] [zoner] Displays menu containing various options to change map settings");
-	RegConsoleCmd("sm_ms", Admin_MapSettings, "[SurfTimer] [zoner] Displays menu containing various options to change map settings");
-	RegConsoleCmd("sm_maxvelocity", Command_SetMaxVelocity, "[SurfTimer] [zoner] Set the current maps maxvelocity");
-	RegConsoleCmd("sm_mv", Command_SetMaxVelocity, "[SurfTimer] [zoner] Set the current maps max velocity");
-	RegConsoleCmd("sm_announcerecord", Command_SetAnnounceRecord, "[SurfTimer] [zoner] Set whether records will be announced on all finishes, pb only or client only");
-	RegConsoleCmd("sm_ar", Command_SetAnnounceRecord, "[SurfTimer] [zoner] Set whether records will be announced on all finishes, pb only or client only");
-	RegConsoleCmd("sm_gravityfix", Command_SetGravityFix, "[SurfTimer] [zoner] Toggle the gravity fix on the current map");
-	RegConsoleCmd("sm_gf", Command_SetGravityFix, "[SurfTimer] [zoner] Toggle the gravity fix on the current map");
-	RegConsoleCmd("sm_triggers", Command_ToggleTriggers, "[SurfTimer] [zoner] Toggle display of map triggers");
-	RegConsoleCmd("sm_noclipspeed", Command_NoclipSpeed, "[SurfTimer] [zoner] Changes the value of sv_noclipspeed");
-
+	RegConsoleCmd("sm_zones", Command_Zones, "[SurfTimer] 设置区域.");
+	RegConsoleCmd("sm_hookzone", Command_HookZones, "[SurfTimer] 借用地图自带的区域.");
+	RegConsoleCmd("sm_addmaptier", Admin_insertMapTier, "[SurfTimer] 改变地图难度");
+	RegConsoleCmd("sm_amt", Admin_insertMapTier, "[SurfTimer] 改变地图难度");
+	RegConsoleCmd("sm_addspawn", Admin_insertSpawnLocation, "[SurfTimer] 改变出生点(指!r)");
+	RegConsoleCmd("sm_delspawn", Admin_deleteSpawnLocation, "[SurfTimer] 删除出生点(指!r)");
+	RegConsoleCmd("sm_mapsettings", Admin_MapSettings, "[SurfTimer] 设置地图信息");
+	RegConsoleCmd("sm_ms", Admin_MapSettings, "[SurfTimer] 设置地图信息");
+	RegConsoleCmd("sm_maxvelocity", Command_SetMaxVelocity, "[SurfTimer] 设置地图最大速度");
+	RegConsoleCmd("sm_mv", Command_SetMaxVelocity, "[SurfTimer] 设置地图最大速度");
+	RegConsoleCmd("sm_announcerecord", Command_SetAnnounceRecord, "[SurfTimer] 设置需要公告的记录(用法打指令有)");
+	RegConsoleCmd("sm_ar", Command_SetAnnounceRecord, "[SurfTimer] 设置需要公告的记录");
+	RegConsoleCmd("sm_gravityfix", Command_SetGravityFix, "[SurfTimer] 触发地图的重力修复功能");
+	RegConsoleCmd("sm_gf", Command_SetGravityFix, "[SurfTimer] 触发地图的重力修复功能");
+	RegConsoleCmd("sm_triggers", Command_ToggleTriggers, "[SurfTimer] 显示地图triggers区域");
+	RegConsoleCmd("sm_noclipspeed", Command_NoclipSpeed, "[SurfTimer] 改变穿墙参数值");
+	
 	// VIP Commands
-	RegAdminCmd("sm_fixbot", Admin_FixBot, g_VipFlag, "[SurfTimer] Toggles replay bots off and on");
-	RegAdminCmd("sm_fixbots", Admin_FixBot, g_VipFlag, "[SurfTimer] Toggles replay bots off and on");
-	RegAdminCmd("sm_fb", Admin_FixBot, g_VipFlag, "[SurfTimer] Toggles replay bots off and on");
+	RegAdminCmd("sm_fixbot", Admin_FixBot, g_VipFlag, "[SurfTimer] 修电脑录像");
+	RegAdminCmd("sm_fixbots", Admin_FixBot, g_VipFlag, "[SurfTimer] 修电脑录像");
+	RegAdminCmd("sm_fb", Admin_FixBot, g_VipFlag, "[SurfTimer] 修电脑录像");
 
-	RegConsoleCmd("sm_vip", Command_Vip, "[SurfTimer] [vip] Displays the VIP menu to client");
-	RegConsoleCmd("sm_mytitle", Command_PlayerTitle, "[SurfTimer] [vip] Displays a menu to the player showing their custom title and allowing them to change their colours");
-	RegConsoleCmd("sm_title", Command_PlayerTitle, "[SurfTimer] [vip] Displays a menu to the player showing their custom title and allowing them to change their colours");
-	RegConsoleCmd("sm_customtitle", Command_SetDbTitle, "[SurfTimer] [vip] VIPs can set their own custom title into a db");
-	RegConsoleCmd("sm_namecolour", Command_SetDbNameColour, "[SurfTimer] [vip] VIPs can set their own custom name colour into the db");
-	RegConsoleCmd("sm_textcolour", Command_SetDbTextColour, "[SurfTimer] [vip] VIPs can set their own custom text colour into the db");
-	RegConsoleCmd("sm_ve", Command_VoteExtend, "[SurfTimer] [vip] Vote to extend the map");
-	RegConsoleCmd("sm_colours", Command_ListColours, "[SurfTimer] Lists available colours for sm_mytitle and sm_namecolour");
-	RegConsoleCmd("sm_colors", Command_ListColours, "[SurfTimer] Lists available colours for sm_mytitle and sm_namecolour");
-	RegConsoleCmd("sm_toggletitle", Command_ToggleTitle, "[SurfTimer] [vip] VIPs can toggle their title.");
-	RegConsoleCmd("sm_joinmsg", Command_JoinMsg, "[SurfTimer] [vip] Allows a vip to set their join msg");
+	RegConsoleCmd("sm_vip", Command_Vip, "[SurfTimer] 该功能关闭");
+	RegConsoleCmd("sm_mytitle", Command_PlayerTitle, "[SurfTimer] 设置名字、文本颜色和头衔的开启");
+	RegConsoleCmd("sm_title", Command_PlayerTitle, "[SurfTimer] 设置名字、文本颜色和头衔的开启");
+	RegConsoleCmd("sm_customtitle", Command_SetDbTitle, "[SurfTimer] 设置头衔(必须是英文，可设置颜色)");
+	RegConsoleCmd("sm_namecolour", Command_SetDbNameColour, "[SurfTimer] 设置名字颜色");
+	RegConsoleCmd("sm_textcolour", Command_SetDbTextColour, "[SurfTimer] 设置聊天文本颜色");
+	RegConsoleCmd("sm_ve", Command_VoteExtend, "[SurfTimer] 发起投票延长");
+	RegConsoleCmd("sm_colours", Command_ListColours, "[SurfTimer] 公屏上显示支持的颜色");
+	RegConsoleCmd("sm_colors", Command_ListColours, "[SurfTimer] 公屏上显示支持的颜色");
+	RegConsoleCmd("sm_toggletitle", Command_ToggleTitle, "[SurfTimer] 开启/关闭头衔");
+	RegConsoleCmd("sm_joinmsg", Command_JoinMsg, "[SurfTimer] 该功能关闭");
 
 	// Automatic Donate Commands
-	RegAdminCmd("sm_givevip", VIP_GiveVip, ADMFLAG_ROOT, "[SurfTimer] Give a player VIP");
-	RegAdminCmd("sm_removevip", VIP_RemoveVip, ADMFLAG_ROOT, "[SurfTimer] Remove a players VIP");
-	RegAdminCmd("sm_addcredits", VIP_GiveCredits, ADMFLAG_ROOT, "[SurfTimer] Give a player credits");
+	RegAdminCmd("sm_givevip", VIP_GiveVip, ADMFLAG_ROOT, "[SurfTimer] 该功能关闭");
+	RegAdminCmd("sm_removevip", VIP_RemoveVip, ADMFLAG_ROOT, "[SurfTimer] 该功能关闭");
+	RegAdminCmd("sm_addcredits", VIP_GiveCredits, ADMFLAG_ROOT, "[SurfTimer] 该功能关闭");
 
 	// WRCPs
-	RegConsoleCmd("sm_wrcp", Client_Wrcp, "[SurfTimer] displays stage times for map");
-	RegConsoleCmd("sm_wrcps", Client_Wrcp, "[SurfTimer] displays stage times for map");
-	RegConsoleCmd("sm_srcp", Client_Wrcp, "[SurfTimer] displays stage times for map");
-	RegConsoleCmd("sm_srcps", Client_Wrcp, "[SurfTimer] displays stage times for map");
+	RegConsoleCmd("sm_wrcp", Client_Wrcp, "[SurfTimer] 选择要显示的关卡最佳纪录");
+	RegConsoleCmd("sm_wrcps", Client_Wrcp, "[SurfTimer] 选择要显示的关卡最佳纪录");
+	RegConsoleCmd("sm_srcp", Client_Wrcp, "[SurfTimer] 选择要显示的关卡最佳纪录");
+	RegConsoleCmd("sm_srcps", Client_Wrcp, "[SurfTimer] 选择要显示的关卡最佳纪录");
 
 	// QOL Commands
-	RegConsoleCmd("sm_gb", Command_GoBack, "[SurfTimer] Go back a stage");
-	RegConsoleCmd("sm_goback", Command_GoBack, "[SurfTimer] Go back a stage");
-	RegConsoleCmd("sm_mtop", Client_MapTop, "[SurfTimer] displays local map top for a given map");
-	RegConsoleCmd("sm_p", Client_Profile, "[SurfTimer] opens a player profile");
-	RegConsoleCmd("sm_timer", Client_OptionMenu, "[SurfTimer] opens options menu");
-	RegConsoleCmd("sm_toggletimer", Client_ToggleTimer, "[SurfTimer] toggles timer on and off");
-	RegConsoleCmd("sm_surftimer", Client_OptionMenu, "[SurfTimer] opens options menu");
-	RegConsoleCmd("sm_bhoptimer", Client_OptionMenu, "[SurfTimer] opens options menu");
-	RegConsoleCmd("sm_knife", Command_GiveKnife, "[SurfTimer] Give players a knife");
+	RegConsoleCmd("sm_gb", Command_GoBack, "[SurfTimer] 返回上一关");
+	RegConsoleCmd("sm_goback", Command_GoBack, "[SurfTimer] 返回上一关");
+	RegConsoleCmd("sm_mtop", Client_MapTop, "[SurfTimer] 显示所提供的地图top排名");
+	RegConsoleCmd("sm_p", Client_Profile, "[SurfTimer] 打开玩家个人信息");
+	RegConsoleCmd("sm_timer", Client_OptionMenu, "[SurfTimer] 打开计时器设置界面");
+	RegConsoleCmd("sm_toggletimer", Client_ToggleTimer, "[SurfTimer] 开启/关闭计时器");
+	RegConsoleCmd("sm_surftimer", Client_OptionMenu, "[SurfTimer] 打开计时器设置界面");
+	RegConsoleCmd("sm_bhoptimer", Client_OptionMenu, "[SurfTimer] 打开计时器设置界面");
+	RegConsoleCmd("sm_knife", Command_GiveKnife, "[SurfTimer] 得到一把匕首");
 
 	// New Commands
-	RegConsoleCmd("sm_mrank", Command_SelectMapTime, "[SurfTimer] prints a players map record in chat.");
-	RegConsoleCmd("sm_brank", Command_SelectBonusTime, "[SurfTimer] prints a players bonus record in chat.");
-	RegConsoleCmd("sm_pr", Command_SelectPlayerPr, "[SurfTimer] Displays pr menu to client");
-	RegConsoleCmd("sm_togglemapfinish", Command_ToggleMapFinish, "[SurfTimer] Toggles whether a player will finish a map when entering the end zone.");
-	RegConsoleCmd("sm_tmf", Command_ToggleMapFinish, "[surfSurfTimertimer] Toggles whether a player will finish a map when entering the end zone.");
-	RegConsoleCmd("sm_repeat", Command_Repeat, "[SurfTimer] Toggles whether a player will keep repeating the same stage.");
-	RegConsoleCmd("sm_rank", Command_SelectRank, "[SurfTimer] Displays a players server rank in the chat");
-	RegConsoleCmd("sm_mi", Command_MapImprovement, "[SurfTimer] opens map improvement points panel for map");
-	RegConsoleCmd("sm_specbot", Command_SpecBot, "[SurfTimer] Spectate the map bot");
-	RegConsoleCmd("sm_specbotbonus", Command_SpecBonusBot, "[SurfTimer] Spectate the bonus bot");
-	RegConsoleCmd("sm_specbotb", Command_SpecBonusBot, "[SurfTimer] Spectate the bonus bot");
-	RegConsoleCmd("sm_showzones", Command_ShowZones, "[SurfTimer] Clients can toggle whether zones are visible for them");
+	RegConsoleCmd("sm_mrank", Command_SelectMapTime, "[SurfTimer] 在公屏上显示玩家的地图排名.");
+	RegConsoleCmd("sm_brank", Command_SelectBonusTime, "[SurfTimer] 在公屏上显示玩家的奖励关排名.");
+	RegConsoleCmd("sm_pr", Command_SelectPlayerPr, "[SurfTimer] 显示个人最佳纪录");
+	RegConsoleCmd("sm_togglemapfinish", Command_ToggleMapFinish, "[SurfTimer] 设置玩家到达终点时是否停止计时器.");
+	RegConsoleCmd("sm_tmf", Command_ToggleMapFinish, "[SurfTimer] 设置玩家到达终点时是否停止计时器.");
+	RegConsoleCmd("sm_repeat", Command_Repeat, "[SurfTimer] 设置玩家是否要重复当前关卡.");
+	RegConsoleCmd("sm_rank", Command_SelectRank, "[SurfTimer] 在公屏上显示玩家排名");
+	RegConsoleCmd("sm_mi", Command_MapImprovement, "[SurfTimer] 打开地图pts介绍页面");
+	RegConsoleCmd("sm_specbot", Command_SpecBot, "[SurfTimer] 观察电脑录像");
+	RegConsoleCmd("sm_specbotbonus", Command_SpecBonusBot, "[SurfTimer] 观察奖励关电脑录像");
+	RegConsoleCmd("sm_specbotb", Command_SpecBonusBot, "[SurfTimer] 观察奖励关电脑录像");
+	RegConsoleCmd("sm_showzones", Command_ShowZones, "[SurfTimer] 设置玩家是否要显示区域的划线部分");
 
 	// Styles
-	RegConsoleCmd("sm_style", Client_SelectStyle, "[SurfTimer] open style select menu.");
-	RegConsoleCmd("sm_styles", Client_SelectStyle, "[SurfTimer] open style select menu.");
+	RegConsoleCmd("sm_style", Client_SelectStyle, "[SurfTimer] 打开风格页面");
+	RegConsoleCmd("sm_styles", Client_SelectStyle, "[SurfTimer] 打开风格页面.");
 
 	// Test
 	RegAdminCmd("sm_test", sm_test, ADMFLAG_CUSTOM6);
@@ -169,48 +168,47 @@ void CreateCommands()
 	RegAdminCmd("sm_targetname", Client_TargetName, ADMFLAG_ROOT);
 
 	// !Startpos -- Goose
-	RegConsoleCmd("sm_startpos", Command_Startpos, "[SurfTimer] Saves current location as new !r spawn.");
-	RegConsoleCmd("sm_resetstartpos", Command_ResetStartpos, "[SurfTimer] Removes custom !r spawn.");
+	RegConsoleCmd("sm_startpos", Command_Startpos, "[SurfTimer] 设置!r出生点");
+	RegConsoleCmd("sm_resetstartpos", Command_ResetStartpos, "[SurfTimer] 删除!r出生点.");
 
 	// Discord
-	RegConsoleCmd("sm_bug", Command_Bug, "[SurfTimer] report a bug to our discord");
-	RegConsoleCmd("sm_calladmin", Command_Calladmin, "[SurfTimer] sends a message to the staff");
+	RegConsoleCmd("sm_bug", Command_Bug, "[SurfTimer] 该功能已关闭");
+	RegConsoleCmd("sm_calladmin", Command_Calladmin, "[SurfTimer] 有事叫OP");
 
 	// CPR
-	RegConsoleCmd("sm_cpr", Command_CPR, "[SurfTimer] Compare clients time to another clients time");
+	RegConsoleCmd("sm_cpr", Command_CPR, "[SurfTimer] 显示玩家vs玩家的时间对比页面(详见论坛)");
 
 	// reload map
-	RegAdminCmd("sm_rm", Command_ReloadMap, ADMFLAG_ROOT, "[SurfTimer] Reloads the current map");
+	RegAdminCmd("sm_rm", Command_ReloadMap, ADMFLAG_ROOT, "[SurfTimer] 重新加载当前地图");
 
 	// Play record
-	RegConsoleCmd("sm_replay", Command_PlayRecord, "[SurfTimer] Set the replay bot to replay a run");
-	RegConsoleCmd("sm_replays", Command_PlayRecord, "[SurfTimer] Set the replay bot to replay a run");
+	RegConsoleCmd("sm_replay", Command_PlayRecord, "[SurfTimer] 选择要看的电脑录像");
+	RegConsoleCmd("sm_replays", Command_PlayRecord, "[SurfTimer] 选择要看的电脑录像");
 
 	// Delete records
-	RegAdminCmd("sm_deleterecords", Command_DeleteRecords, g_ZonerFlag, "[SurfTimer] [zoner] Delete records");
-	RegAdminCmd("sm_dr", Command_DeleteRecords, g_ZonerFlag, "[SurfTimer] [zoner] Delete records");
+	RegAdminCmd("sm_deleterecords", Command_DeleteRecords, g_ZonerFlag, "[SurfTimer] 删除记录");
+	RegAdminCmd("sm_dr", Command_DeleteRecords, g_ZonerFlag, "[SurfTimer] 删除记录");
 
 	// Setting Commands
-	RegConsoleCmd("sm_pre", Command_Prestrafe, "[SurfTimer] [settings] Toggles prestrafe messages for player");
-	RegConsoleCmd("sm_prestrafe", Command_Prestrafe, "[SurfTimer] [settings] Toggles prestrafe messages for player");
-	RegConsoleCmd("sm_silentspec", Command_SilentSpec, "[SurfTimer] [settings] Toggles silent spectate for player");
-	RegConsoleCmd("sm_sspec", Command_SilentSpec, "[SurfTimer] [settings] Toggles silent spectate for player");
-	RegConsoleCmd("sm_togglewrcps", Command_ToggleWrcps, "[SurfTimer] [settings] on/off - Enable player checkpoints");
-	RegConsoleCmd("sm_togglecps", Command_ToggleCps, "[SurfTimer] [settings] on/off - Enable player checkpoints");
-	RegConsoleCmd("sm_quake", Command_ToggleQuake, "[SurfTimer] [settings] on/off - Enable sounds");
-	RegConsoleCmd("sm_startside", Command_ChangeStartSide, "[SurfTimer] [settings] left/right - change start side");
-	RegConsoleCmd("sm_speedgradient", Command_ChangeSpeedGradient, "[SurfTimer] [settings] white/green/rainbow/momentum - change speed gradient");
-	RegConsoleCmd("sm_speedmode", Command_ChangeSpeedMode, "[SurfTimer] [settings] xy/xyz/z - change speed mode");
-	RegConsoleCmd("sm_centerspeed", Command_CenterSpeed, "[SurfTimer] [settings] on/off - toggle center speed display");
-	RegConsoleCmd("sm_nctriggers", Command_ToggleNcTriggers, "[SurfTimer] [settings] on/off - toggle triggers while noclipping");
-	RegConsoleCmd("sm_autoreset", Command_ToggleAutoReset, "[SurfTimer] [settings] on/off - toggle auto reset for your current map/bonus run if your above your pb");
+	RegConsoleCmd("sm_pre", Command_Prestrafe, "[SurfTimer]  显示玩家prestrafe信息");
+	RegConsoleCmd("sm_prestrafe", Command_Prestrafe, "[SurfTimer]  显示玩家prestrafe信息");
+	RegConsoleCmd("sm_silentspec", Command_SilentSpec, "[SurfTimer]  显示死亡凝视观察者信息");
+	RegConsoleCmd("sm_sspec", Command_SilentSpec, "[SurfTimer]  显示死亡凝视观察者信息");
+	RegConsoleCmd("sm_togglewrcps", Command_ToggleWrcps, "[SurfTimer]  开启/关闭玩家通过检查点的通知");
+	RegConsoleCmd("sm_togglecps", Command_ToggleCps, "[SurfTimer]  开启/关闭玩家通过检查点的通知");
+	RegConsoleCmd("sm_quake", Command_ToggleQuake, "[SurfTimer]  开启/关闭雷神音效");
+	RegConsoleCmd("sm_startside", Command_ChangeStartSide, "[SurfTimer]  设置起点偏好");
+	RegConsoleCmd("sm_speedgradient", Command_ChangeSpeedGradient, "[SurfTimer]  白色/绿色/彩虹色/momentum - 改变速度梯度");
+	RegConsoleCmd("sm_speedmode", Command_ChangeSpeedMode, "[SurfTimer]  xy/xyz/z - 改变速度显示模式");
+	RegConsoleCmd("sm_centerspeed", Command_CenterSpeed, "[SurfTimer]  开启/关闭 - 中心hud显示");
+	RegConsoleCmd("sm_nctriggers", Command_ToggleNcTriggers, "[SurfTimer]  开启/关闭 - 穿墙时触发triggers区域");
+	RegConsoleCmd("sm_autoreset", Command_ToggleAutoReset, "[SurfTimer]  开启/关闭 - 比个人最佳纪录慢时自动回到起点");
 
 	// Trails
-	RegConsoleCmd("sm_trail", Command_Trail, "Opens the 'Trail Selection' menu.");
-	RegConsoleCmd("sm_trails", Command_Trail, "Opens the 'Trail Selection' menu.");
-	RegConsoleCmd("sm_hidetrail", Command_Hide, "Hides other players' trails.");
-	RegConsoleCmd("sm_hidetrails", Command_Hide, "Hides other players' trails.");
-
+	RegConsoleCmd("sm_trail", Command_Trail, "打开'尾迹选择'页面.");
+	RegConsoleCmd("sm_trails", Command_Trail, "打开'尾迹选择'页面.");
+	RegConsoleCmd("sm_hidetrail", Command_Hide, "隐藏尾迹.");
+	RegConsoleCmd("sm_hidetrails", Command_Hide, "隐藏尾迹.");
 }
 
 public Action Command_ToggleAutoReset(int client, int args) {
@@ -1455,14 +1453,14 @@ public Action Client_Top(int client, int args)
 public void TopMenuStyleSelect(int client)
 {
 	Menu menu = CreateMenu(TopMenuStyleSelectHandler);
-	SetMenuTitle(menu, "Top Menu - Select a style\n \n");
-	AddMenuItem(menu, "", "Normal");
-	AddMenuItem(menu, "", "Sideways");
-	AddMenuItem(menu, "", "Half-Sideways");
-	AddMenuItem(menu, "", "Backwards");
-	AddMenuItem(menu, "", "Low-Gravity");
-	AddMenuItem(menu, "", "Slow Motion");
-	AddMenuItem(menu, "", "Fast Forwards");
+	SetMenuTitle(menu, "Top菜单 - 选择一种风格\n \n");
+	AddMenuItem(menu, "", "普通模式");
+	AddMenuItem(menu, "", "侧滑");
+	AddMenuItem(menu, "", "半侧滑");
+	AddMenuItem(menu, "", "倒滑");
+	AddMenuItem(menu, "", "低重力");
+	AddMenuItem(menu, "", "蜗牛模式");
+	AddMenuItem(menu, "", "极速模式");
 	SetMenuExitButton(menu, true);
 	DisplayMenu(menu, client, MENU_TIME_FOREVER);
 }
@@ -2008,7 +2006,7 @@ public Action Client_Help(int client, int args)
 	char szCommand[320];
 	while (ReadCommandIterator(cmdIter, name, sizeof(name), flags, desc, sizeof(desc)))
 	{
-		if ((StrContains(desc, "[surftimer]", false) != -1) && CheckCommandAccess(client, name, flags))
+		if ((StrContains(desc, "[SurfTimer]", false) != -1) && CheckCommandAccess(client, name, flags))
 		{
 			if ((StrContains(desc, "[zoner]", false) != -1))
 			{
@@ -2022,7 +2020,7 @@ public Action Client_Help(int client, int args)
 			}
 
 			char szBuffer[512][2];
-			ExplodeString(desc, "[surftimer]", szBuffer, 2, 512, false);
+			ExplodeString(desc, "[SurfTimer]", szBuffer, 2, 512, false);
 			Format(szCommand, 320, "%s - %s", name, szBuffer[1]);
 			AddMenuItem(menu, "", szCommand, ITEMDRAW_DISABLED);
 		}
@@ -2560,15 +2558,15 @@ public void ckTopMenu(int client, int style)
 	Menu cktopmenu = CreateMenu(TopMenuHandler);
 
 	char szTitle[128], szStyle[2];
-	Format(szTitle, sizeof(szTitle), "Top Menu - %s\n------------------------------\n", g_szStyleMenuPrint[style]);
+	Format(szTitle, sizeof(szTitle), "Top 菜单 - %s\n------------------------------\n", g_szStyleMenuPrint[style]);
 	SetMenuTitle(cktopmenu, szTitle);
 	IntToString(style, szStyle, sizeof(szStyle));
 
 	if (GetConVarBool(g_hPointSystem))
-		AddMenuItem(cktopmenu, szStyle, "Top 100 Players");
+		AddMenuItem(cktopmenu, szStyle, "服务器前100名玩家");
 
-	AddMenuItem(cktopmenu, szStyle, "Map Top");
-	AddMenuItem(cktopmenu, szStyle, "Bonus Top", !g_bhasBonus);
+	AddMenuItem(cktopmenu, szStyle, "地图 Top");
+	AddMenuItem(cktopmenu, szStyle, "奖励关 Top", !g_bhasBonus);
 
 	SetMenuOptionFlags(cktopmenu, MENUFLAG_BUTTON_EXIT);
 	DisplayMenu(cktopmenu, client, MENU_TIME_FOREVER);
@@ -2645,16 +2643,16 @@ public int BonusTopMenuHandler(Menu menu, MenuAction action, int param1, int par
 public void OptionMenu(int client)
 {
 	Menu optionmenu = CreateMenu(OptionMenuHandler);
-	SetMenuTitle(optionmenu, "Options Menu\n \n");
+	SetMenuTitle(optionmenu, "设置菜单\n \n");
 	// #0
 	if (g_bTimerEnabled[client])
-		AddMenuItem(optionmenu, "ToggleTimer", "[ON] Toggle Timer\n \n");
+		AddMenuItem(optionmenu, "ToggleTimer", "[ON] 计时器\n \n");
 	else
-		AddMenuItem(optionmenu, "ToggleTimer", "[OFF] Toggle Timer\n \n");
+		AddMenuItem(optionmenu, "ToggleTimer", "[OFF] 计时器\n \n");
 
-	AddMenuItem(optionmenu, "CentreHud", "Centre Hud Options");
-	AddMenuItem(optionmenu, "SideHud", "Side Hud Options");
-	AddMenuItem(optionmenu, "Miscellaneous", "Miscellaneous Options");
+	AddMenuItem(optionmenu, "CentreHud", "中心hud设置");
+	AddMenuItem(optionmenu, "SideHud", "侧边hud设置");
+	AddMenuItem(optionmenu, "Miscellaneous", "其他设置");
 
 	SetMenuOptionFlags(optionmenu, MENUFLAG_BUTTON_EXIT);
 	DisplayMenu(optionmenu, client, MENU_TIME_FOREVER);
@@ -2686,21 +2684,21 @@ public int OptionMenuHandler(Menu menu, MenuAction action, int param1, int param
 public void CentreHudOptions(int client, int item)
 {
 	Menu menu = CreateMenu(CentreHudOptionsHandler);
-	SetMenuTitle(menu, "Options Menu - Centre Hud\n \n");
+	SetMenuTitle(menu, "设置菜单 - 中心hud\n \n");
 
 	if (g_bCentreHud[client])
-		AddMenuItem(menu, "", "[ON] Centre Hud");
+		AddMenuItem(menu, "", "[ON] 中心hud");
 	else
-		AddMenuItem(menu, "", "[OFF] Centre Hud");
+		AddMenuItem(menu, "", "[OFF] 中心hud");
 
-	AddMenuItem(menu, "", "Reset Modules\n \n");
+	AddMenuItem(menu, "", "重置组合\n \n");
 
-	AddMenuItem(menu, "Top Left Module", "Top Left Module");
-	AddMenuItem(menu, "Top Right Module", "Top Right Module\n \n");
-	AddMenuItem(menu, "Middle Left Module", "Middle Left Module");
-	AddMenuItem(menu, "Middle Right Module", "Middle Right Module\n \n");
-	AddMenuItem(menu, "Bottom Left Module", "Bottom Left Module");
-	AddMenuItem(menu, "Bottom Right Module", "Bottom Right Module");
+	AddMenuItem(menu, "Top Left Module", "顶部左侧组合");
+	AddMenuItem(menu, "Top Right Module", "顶部右侧组合\n \n");
+	AddMenuItem(menu, "Middle Left Module", "中部左侧组合");
+	AddMenuItem(menu, "Middle Right Module", "中部右侧组合\n \n");
+	AddMenuItem(menu, "Bottom Left Module", "底部左侧组合");
+	AddMenuItem(menu, "Bottom Right Module", "底部右侧组合");
 
 	SetMenuExitBackButton(menu, true);
 
@@ -2770,51 +2768,51 @@ public void CentreHudModulesMenu(int client, int module, const char[] szTitle)
 
 	// Toggle Module
 	if (g_iCentreHudModule[client][module] == 0)
-		AddMenuItem(menu, szTitle, "[OFF] Toggle Module\n \n");
+		AddMenuItem(menu, szTitle, "[OFF] 组合\n \n");
 	else
-		AddMenuItem(menu, szTitle, "[ON] Toggle Module\n \n");
+		AddMenuItem(menu, szTitle, "[ON] 组合\n \n");
 
 	// Timer
 	if (g_iCentreHudModule[client][module] == 1)
-		AddMenuItem(menu, szTitle, "[ON] Timer");
+		AddMenuItem(menu, szTitle, "[ON] 计时器");
 	else
-		AddMenuItem(menu, szTitle, "[OFF] Timer");
+		AddMenuItem(menu, szTitle, "[OFF] 计时器");
 
 	// WR
 	if (g_iCentreHudModule[client][module] == 2)
-		AddMenuItem(menu, szTitle, "[ON] Server Record");
+		AddMenuItem(menu, szTitle, "[ON] 服务器记录");
 	else
-		AddMenuItem(menu, szTitle, "[OFF] Server Record");
+		AddMenuItem(menu, szTitle, "[OFF] 服务器记录");
 
 	// PB
 	if (g_iCentreHudModule[client][module] == 3)
-		AddMenuItem(menu, szTitle, "[ON] Personal Best");
+		AddMenuItem(menu, szTitle, "[ON] 个人最佳");
 	else
-		AddMenuItem(menu, szTitle, "[OFF] Personal Best");
+		AddMenuItem(menu, szTitle, "[OFF] 个人最佳");
 
 	// Rank
 	if (g_iCentreHudModule[client][module] == 4)
-		AddMenuItem(menu, szTitle, "[ON] Rank Display");
+		AddMenuItem(menu, szTitle, "[ON] 显示排名");
 	else
-		AddMenuItem(menu, szTitle, "[OFF] Rank Display");
+		AddMenuItem(menu, szTitle, "[OFF] 显示排名");
 
 	// Stage
 	if (g_iCentreHudModule[client][module] == 5)
-		AddMenuItem(menu, szTitle, "[ON] Stage Display");
+		AddMenuItem(menu, szTitle, "[ON] 显示关卡");
 	else
-		AddMenuItem(menu, szTitle, "[OFF] Stage Display");
+		AddMenuItem(menu, szTitle, "[OFF] 显示关卡");
 
 	// Speed
 	if (g_iCentreHudModule[client][module] == 6)
-		AddMenuItem(menu, szTitle, "[ON] Speed Display");
+		AddMenuItem(menu, szTitle, "[ON] 显示速度");
 	else
-		AddMenuItem(menu, szTitle, "[OFF] Speed Display");
+		AddMenuItem(menu, szTitle, "[OFF] 显示速度");
 
 	// Strafe Sync
 	if (g_iCentreHudModule[client][module] == 7)
-		AddMenuItem(menu, szTitle, "[ON] Strafe Sync");
+		AddMenuItem(menu, szTitle, "[ON] 显示同步率");
 	else
-		AddMenuItem(menu, szTitle, "[OFF] Strafe Sync");
+		AddMenuItem(menu, szTitle, "[OFF] 显示同步率");
 
 	SetMenuExitBackButton(menu, true);
 	DisplayMenu(menu, client, MENU_TIME_FOREVER);
@@ -2858,21 +2856,21 @@ public int CentreHudModulesMenuHandler(Menu menu, MenuAction action, int param1,
 public void SideHudOptions(int client, int item)
 {
 	Menu menu = CreateMenu(SideHudOptionsHandler);
-	SetMenuTitle(menu, "Options Menu - Side Hud\n \n");
+	SetMenuTitle(menu, "设置菜单 - 侧边hud\n \n");
 
-	AddMenuItem(menu, "Module 1", "Module 1");
-	AddMenuItem(menu, "Module 2", "Module 2");
-	AddMenuItem(menu, "Module 3", "Moudle 3");
-	AddMenuItem(menu, "Module 4", "Module 4");
-	AddMenuItem(menu, "Module 5", "Module 5\n \n");
+	AddMenuItem(menu, "Module 1", "组合 1");
+	AddMenuItem(menu, "Module 2", "组合 2");
+	AddMenuItem(menu, "Module 3", "组合 3");
+	AddMenuItem(menu, "Module 4", "组合 4");
+	AddMenuItem(menu, "Module 5", "组合 5\n \n");
 
 	// Side Hud
 	if (g_bSideHud[client])
-		AddMenuItem(menu, "", "[ON] Side Hud");
+		AddMenuItem(menu, "", "[ON] 侧边hud");
 	else
-		AddMenuItem(menu, "", "[OFF] Side Hud");
+		AddMenuItem(menu, "", "[OFF] 侧边hud");
 
-	AddMenuItem(menu, "", "How do I get the old spec menu back?");
+	AddMenuItem(menu, "", "我要怎么样才能恢复设置?");
 
 	SetMenuExitBackButton(menu, true);
 
@@ -2920,39 +2918,39 @@ public void SideHudModulesMenu(int client, int module, char[] szTitle)
 
 	// Toggle Module
 	if (g_iSideHudModule[client][module] == 0)
-		AddMenuItem(menu, szTitle, "[OFF] Toggle Module\n \n");
+		AddMenuItem(menu, szTitle, "[OFF] 组合\n \n");
 	else
-		AddMenuItem(menu, szTitle, "[ON] Toggle Module\n \n");
+		AddMenuItem(menu, szTitle, "[ON] 组合\n \n");
 
 	// Timeleft
 	if (g_iSideHudModule[client][module] == 1)
-		AddMenuItem(menu, szTitle, "[ON] Timeleft");
+		AddMenuItem(menu, szTitle, "[ON] 剩余时间");
 	else
-		AddMenuItem(menu, szTitle, "[OFF] Timeleft");
+		AddMenuItem(menu, szTitle, "[OFF] 剩余时间");
 
 	// WR
 	if (g_iSideHudModule[client][module] == 2)
-		AddMenuItem(menu, szTitle, "[ON] Server Record Info");
+		AddMenuItem(menu, szTitle, "[ON] 服务器纪录信息");
 	else
-		AddMenuItem(menu, szTitle, "[OFF] Server Record Info");
+		AddMenuItem(menu, szTitle, "[OFF] 服务器纪录信息");
 
 	// PB
 	if (g_iSideHudModule[client][module] == 3)
-		AddMenuItem(menu, szTitle, "[ON] Personal Best Info");
+		AddMenuItem(menu, szTitle, "[ON] 个人最佳记录信息");
 	else
-		AddMenuItem(menu, szTitle, "[OFF] Personal Best Info");
+		AddMenuItem(menu, szTitle, "[OFF] 个人最佳记录信息");
 
 	// Stage Info
 	if (g_iSideHudModule[client][module] == 4)
-		AddMenuItem(menu, szTitle, "[ON] Stage Info");
+		AddMenuItem(menu, szTitle, "[ON] 关卡信息");
 	else
-		AddMenuItem(menu, szTitle, "[OFF] Stage Info");
+		AddMenuItem(menu, szTitle, "[OFF] 关卡信息");
 
 	// Spec list
 	if (g_iSideHudModule[client][module] == 5)
-		AddMenuItem(menu, szTitle, "[ON] Spec List");
+		AddMenuItem(menu, szTitle, "[ON] 观察者列表");
 	else
-		AddMenuItem(menu, szTitle, "[OFF] Spec List");
+		AddMenuItem(menu, szTitle, "[OFF] 观察者列表");
 
 	SetMenuExitBackButton(menu, true);
 	DisplayMenu(menu, client, MENU_TIME_FOREVER);
@@ -3000,25 +2998,25 @@ public int SideHudModulesMenuHandler(Menu menu, MenuAction action, int param1, i
 public void MiscellaneousOptions(int client)
 {
 	Menu menu = CreateMenu(MiscellaneousOptionsHandler);
-	SetMenuTitle(menu, "Options Menu - Miscellaneous\n \n");
+	SetMenuTitle(menu, "其他设置菜单\n \n");
 
 	// Hide
 	if (g_bHide[client])
-		AddMenuItem(menu, "", "[ON] Hide Players");
+		AddMenuItem(menu, "", "[ON] 隐藏玩家");
 	else
-		AddMenuItem(menu, "", "[OFF] Hide Players");
+		AddMenuItem(menu, "", "[OFF] 隐藏玩家");
 
 	// Timer Sounds
 	if (g_bEnableQuakeSounds[client])
-		AddMenuItem(menu, "", "[ON] Timer Sounds");
+		AddMenuItem(menu, "", "[ON] 计时器音效");
 	else
-		AddMenuItem(menu, "", "[OFF] Timer Sounds");
+		AddMenuItem(menu, "", "[OFF] 计时器音效");
 	
 	// Tele Side
 	if (g_iTeleSide[client] == 0)
-		AddMenuItem(menu, "", "[LEFT] Start Side");
+		AddMenuItem(menu, "", "[左边] 起点偏好");
 	else
-		AddMenuItem(menu, "", "[RIGHT] Start Side");
+		AddMenuItem(menu, "", "[右边] 起点偏好");
 
 	// Speed Gradient
 	if (g_SpeedGradient[client] == 0)
@@ -3032,35 +3030,35 @@ public void MiscellaneousOptions(int client)
 	
 	// Speed Mode
 	if (g_SpeedMode[client] == 0)
-		AddMenuItem(menu, "", "[XY] Speed Mode");
+		AddMenuItem(menu, "", "[平面直角坐标系] 速度显示模式");
 	else if (g_SpeedMode[client] == 1)
-		AddMenuItem(menu, "", "[XYZ] Speed Mode");
+		AddMenuItem(menu, "", "[空间直角坐标系] 速度显示模式");
 	else
-		AddMenuItem(menu, "", "[Z] Speed Mode");
+		AddMenuItem(menu, "", "[Z轴一维坐标系] 速度显示模式");
 
 	// Centre Speed Display
 	if (g_bCenterSpeedDisplay[client])
-		AddMenuItem(menu, "", "[ON] Centre Speed Display");
+		AddMenuItem(menu, "", "[ON] 中心hud速度显示");
 	else
-		AddMenuItem(menu, "", "[OFF] Centre Speed Display");
+		AddMenuItem(menu, "", "[OFF] 中心hud速度显示");
 
 	// Hide Chat
 	if (g_bHideChat[client])
-		AddMenuItem(menu, "", "[ON] Hide Chat");
+		AddMenuItem(menu, "", "[ON] 隐藏聊天框");
 	else
-		AddMenuItem(menu, "", "[OFF] Hide Chat");
+		AddMenuItem(menu, "", "[OFF] 隐藏聊天框");
 
 	// Hide Weapon
 	if (g_bViewModel[client])
-		AddMenuItem(menu, "", "[OFF] Hide Weapon");
+		AddMenuItem(menu, "", "[OFF] 隐藏武器");
 	else
-		AddMenuItem(menu, "", "[ON] Hide Weapon");
+		AddMenuItem(menu, "", "[ON] 隐藏武器");
 
 	// Show Prespeed
 	if (g_iPrespeedText[client])
-		AddMenuItem(menu, "", "[ON] Prestrafe Message");
+		AddMenuItem(menu, "", "[ON] Prestrafe 信息");
 	else
-		AddMenuItem(menu, "", "[OFF] Prestrafe Message");
+		AddMenuItem(menu, "", "[OFF] Prestrafe 信息");
 	
 	SetMenuExitBackButton(menu, true);
 	DisplayMenu(menu, client, MENU_TIME_FOREVER);
@@ -3392,14 +3390,14 @@ public Action Client_Wrcp(int client, int args)
 public void WrcpStyleSelectMenu(int client)
 {
 	Menu menu = CreateMenu(WrcpStyleSelectMenuHandler);
-	SetMenuTitle(menu, "SRCP: Select a style");
-	AddMenuItem(menu, "", "Normal");
-	AddMenuItem(menu, "", "Sideways");
-	AddMenuItem(menu, "", "Half-Sideways");
-	AddMenuItem(menu, "", "Backwards");
-	AddMenuItem(menu, "", "Low-Gravity");
-	AddMenuItem(menu, "", "Slow Motion");
-	AddMenuItem(menu, "", "Fast Forwards");
+	SetMenuTitle(menu, "WRCP: 选择一种风格");
+	AddMenuItem(menu, "", "普通模式");
+	AddMenuItem(menu, "", "侧滑");
+	AddMenuItem(menu, "", "半侧滑");
+	AddMenuItem(menu, "", "倒滑");
+	AddMenuItem(menu, "", "低重力");
+	AddMenuItem(menu, "", "蜗牛模式");
+	AddMenuItem(menu, "", "极速模式");
 	SetMenuExitButton(menu, true);
 	DisplayMenu(menu, client, MENU_TIME_FOREVER);
 }
@@ -3446,19 +3444,19 @@ public void WrcpMenu(int client, int args, int style)
 		if (style == 0)
 		{
 			menu = CreateMenu(StageSelectMenuHandler);
-			SetMenuTitle(menu, "%s: select a stage \n------------------------------\n", g_szMapName);
+			SetMenuTitle(menu, "%s: 选择一个关卡 \n------------------------------\n", g_szMapName);
 		}
 		else if (style != 0)
 		{
 			g_StyleStageSelect[client] = style;
 			menu = CreateMenu(StageStyleSelectMenuHandler);
-			SetMenuTitle(menu, "%s: select a stage [%s] \n------------------------------\n", g_szMapName, g_szStyleMenuPrint[style]);
+			SetMenuTitle(menu, "%s: 选择一个关卡 [%s] \n------------------------------\n", g_szMapName, g_szStyleMenuPrint[style]);
 		}
 		int stageCount = g_TotalStages;
 		for (int i = 1; i <= stageCount; i++)
 		{
 	 			stage[0] = i;
-				Format(szStageString, sizeof(szStageString), "Stage %i", i);
+				Format(szStageString, sizeof(szStageString), "关卡 %i", i);
 				AddMenuItem(menu, stage[0], szStageString);
 		}
 		g_bSelectWrcp[client] = true;
@@ -3546,9 +3544,9 @@ public Action Client_SelectStyle(int client, int args)
 public void styleSelectMenu(int client)
 {
 	Menu styleSelect = CreateMenu(StyleTypeSelectMenuHandler);
-	SetMenuTitle(styleSelect, "Current Style: %s\n------------------------------\n", g_szInitalStyle[client]);
-	AddMenuItem(styleSelect, "ranked", "Ranked Styles");
-	AddMenuItem(styleSelect, "fun", "Fun Styles");
+	SetMenuTitle(styleSelect, "当前风格: %s\n------------------------------\n", g_szInitalStyle[client]);
+	AddMenuItem(styleSelect, "ranked", "可排名风格");
+	AddMenuItem(styleSelect, "fun", "娱乐风格");
 	SetMenuOptionFlags(styleSelect, MENUFLAG_BUTTON_EXIT);
 	DisplayMenu(styleSelect, client, MENU_TIME_FOREVER);
 }
@@ -3562,22 +3560,22 @@ public int StyleTypeSelectMenuHandler(Menu styleSelect, MenuAction action, int p
 			case 0:
 			{
 				Menu styleSelect2 = CreateMenu(StyleSelectMenuHandler);
-				SetMenuTitle(styleSelect2, "Current Style: %s\n------------------------------\n", g_szInitalStyle[param1]);
-				AddMenuItem(styleSelect2, "0", "Normal");
-				AddMenuItem(styleSelect2, "1", "Sideways");
-				AddMenuItem(styleSelect2, "2", "Half-Sideways");
-				AddMenuItem(styleSelect2, "3", "Backwards");
+				SetMenuTitle(styleSelect2, "当前风格: %s\n------------------------------\n", g_szInitalStyle[param1]);
+				AddMenuItem(styleSelect2, "0", "普通模式");
+				AddMenuItem(styleSelect2, "1", "侧滑");
+				AddMenuItem(styleSelect2, "2", "半侧滑");
+				AddMenuItem(styleSelect2, "3", "倒滑");
 				SetMenuOptionFlags(styleSelect2, MENUFLAG_BUTTON_EXIT);
 				DisplayMenu(styleSelect2, param1, MENU_TIME_FOREVER);
 			}
 			case 1:
 			{
 				Menu styleSelect2 = CreateMenu(StyleSelectMenuHandler);
-				SetMenuTitle(styleSelect2, "Current Style: %s\n------------------------------\n", g_szInitalStyle[param1]);
-				AddMenuItem(styleSelect2, "0", "Normal - Ranked");
-				AddMenuItem(styleSelect2, "4", "Low-Gravity");
-				AddMenuItem(styleSelect2, "5", "Slow Motion");
-				AddMenuItem(styleSelect2, "6", "Fast Forward");
+				SetMenuTitle(styleSelect2, "当前风格: %s\n------------------------------\n", g_szInitalStyle[param1]);
+				AddMenuItem(styleSelect2, "0", "普通模式");
+				AddMenuItem(styleSelect2, "4", "低重力");
+				AddMenuItem(styleSelect2, "5", "蜗牛模式");
+				AddMenuItem(styleSelect2, "6", "极速模式");
 				SetMenuOptionFlags(styleSelect2, MENUFLAG_BUTTON_EXIT);
 				DisplayMenu(styleSelect2, param1, MENU_TIME_FOREVER);
 			}
@@ -4636,25 +4634,25 @@ public Action Command_PlayRecord(int client, int args)
 public void PlayRecordMenu(int client)
 {
 	Menu menu = CreateMenu(PlayRecordTypeMenuHandler);
-	SetMenuTitle(menu, "Play Record: Select a type");
+	SetMenuTitle(menu, "选择一个风格来播放录像");
 
 	// Check for map replay
 	if (g_bMapReplay[0])
-		AddMenuItem(menu, "", "Map Replay");
+		AddMenuItem(menu, "", "地图录像");
 	else
-		AddMenuItem(menu, "", "Map Replay", ITEMDRAW_DISABLED);
+		AddMenuItem(menu, "", "地图录像", ITEMDRAW_DISABLED);
 
 	// Check for bonus replay
 	for (int i = 1; i < MAXZONEGROUPS; i++)
 	{
 		if (g_bMapBonusReplay[i][0])
 		{
-			AddMenuItem(menu, "", "Bonus Replay");
+			AddMenuItem(menu, "", "奖励关录像");
 			break;
 		}
 
 		if (i == MAXZONEGROUPS - 1)
-			AddMenuItem(menu, "", "Bonus Replay", ITEMDRAW_DISABLED);
+			AddMenuItem(menu, "", "奖励关录像", ITEMDRAW_DISABLED);
 	}
 
 	// Check for stage replay
@@ -4664,16 +4662,16 @@ public void PlayRecordMenu(int client)
 		{
 			if (g_bStageReplay[i])
 			{
-				AddMenuItem(menu, "", "Stage Replay");
+				AddMenuItem(menu, "", "关卡录像");
 				break;
 			}
 			
 			if (i == g_TotalStages)
-				AddMenuItem(menu, "", "Stage Replay", ITEMDRAW_DISABLED);
+				AddMenuItem(menu, "", "关卡录像", ITEMDRAW_DISABLED);
 		}
 	}
 	else
-		AddMenuItem(menu, "", "Stage Replay", ITEMDRAW_DISABLED);
+		AddMenuItem(menu, "", "关卡录像", ITEMDRAW_DISABLED);
 
 	SetMenuExitButton(menu, true);
 	DisplayMenu(menu, client, MENU_TIME_FOREVER);
