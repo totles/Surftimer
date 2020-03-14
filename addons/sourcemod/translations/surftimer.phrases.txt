@@ -518,7 +518,7 @@
 	"Commands40"
 	{
 		"#format"	"{1:s}"
-		"en"		"{1} 用法: !customtitle"
+		"en"		"{1} 用法: 详见论坛"
 	}
 	"Commands41"
 	{
