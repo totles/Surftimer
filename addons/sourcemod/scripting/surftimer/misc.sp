@@ -2754,9 +2754,12 @@ public void CheckRun(int client)
 			g_bMissedMapBest[client] = true;
 			if (g_fPersonalRecord[client] > 0.0) {
 				CPrintToChat(client, "%t", "MissedMapBest", g_szChatPrefix, g_szPersonalRecord[client]);
-				if (g_iAutoReset[client]) {
+				if (g_iAutoReset[client] && g_iCurrentStyle[client] == 0) {
 					Command_Restart(client, 1);
 					CPrintToChat(client, "%t", "AutoResetMessage1", g_szChatPrefix);
+					CPrintToChat(client, "%t", "AutoResetMessage2", g_szChatPrefix);
+				} else if (g_iAutoReset[client] && g_iCurrentStyle[client] != 0) {
+					CPrintToChat(client, "%t", "AutoResetMessageStyle", g_szChatPrefix, g_szStyleMenuPrint[g_iCurrentStyle[client]]);
 					CPrintToChat(client, "%t", "AutoResetMessage2", g_szChatPrefix);
 				}
 			}
@@ -2770,9 +2773,12 @@ public void CheckRun(int client)
 				{
 					g_bMissedBonusBest[client] = true;
 					CPrintToChat(client, "%t", "Misc29", g_szChatPrefix, g_szPersonalRecordBonus[g_iClientInZone[client][2]][client]);
-					if (g_iAutoReset[client]) {
+					if (g_iAutoReset[client] && g_iCurrentStyle[client] == 0) {
 						Command_Teleport(client, 0);
 						CPrintToChat(client, "%t", "AutoResetMessage1", g_szChatPrefix);
+						CPrintToChat(client, "%t", "AutoResetMessage2", g_szChatPrefix);
+					} else if (g_iAutoReset[client] && g_iCurrentStyle[client] != 0) {
+						CPrintToChat(client, "%t", "AutoResetMessageStyle", g_szChatPrefix, g_szStyleMenuPrint[g_iCurrentStyle[client]]);
 						CPrintToChat(client, "%t", "AutoResetMessage2", g_szChatPrefix);
 					}
 					EmitSoundToClient(client, "buttons/button18.wav", client);
@@ -3071,7 +3077,7 @@ public void CreateNavFile()
 	Format(szSource, sizeof(szSource), "maps/replay_bot.nav");
 	if (!FileExists(szSource))
 	{
-		LogError("[Surftimer] Failed to create .nav files. %s doesn't exist!", szSource);
+		LogError("[SurfTimer] Failed to create .nav files. %s doesn't exist!", szSource);
 		return;
 	}
 
@@ -4481,7 +4487,7 @@ public void ReadDefaultTitlesWhitelist()
 		CloseHandle(whitelist);
 	}
 	else
-		LogError("[Surftimer] %s not found", DEFAULT_TITLES_WHITELIST_PATH);
+		LogError("[SurfTimer] %s not found", DEFAULT_TITLES_WHITELIST_PATH);
 }
 
 public void LoadDefaultTitle(int client)
@@ -4551,7 +4557,7 @@ public void LoadDefaultTitle(int client)
 		delete kv;
 	}
 	else
-		LogError("[Surftimer] %s not found", DEFAULT_TITLES_PATH);
+		LogError("[SurfTimer] %s not found", DEFAULT_TITLES_PATH);
 }
 
 public void SetDefaultTitle(int client, const char szTitle[256])
@@ -4601,4 +4607,82 @@ public bool IsPlayerTimerAdmin(int client)
 			return true;
 	}
 	return false;
+}
+
+UserMsg g_TextMsg, g_HintText;
+
+Action TextMsgHintTextHook(UserMsg msg_id, Protobuf msg, const int[] players, int playersNum, bool reliable, bool init)
+{
+	static char sBuf[8192];
+	
+	if(msg_id == g_HintText)
+	{
+		msg.ReadString("text", sBuf, sizeof sBuf);
+	}
+	else if(msg.ReadInt("msg_dst") == 4)
+	{
+		msg.ReadString("params", sBuf, sizeof sBuf, 0);
+	}
+	else
+	{
+		return Plugin_Continue;
+	}
+		
+	if(StrContains(sBuf, "<font") != -1 || StrContains(sBuf, "<span") != -1) // only hook msg with colored tags
+	{
+		DataPack hPack = new DataPack();
+		
+		hPack.WriteCell(playersNum);
+		
+		for(int i = 0; i < playersNum; i++)
+		{
+			hPack.WriteCell(players[i]);
+		}
+		
+		hPack.WriteString(sBuf);
+		
+		hPack.Reset();
+		
+		RequestFrame(TextMsgFix, hPack);
+		
+		return Plugin_Handled;
+	}
+	
+	return Plugin_Continue;
+}
+
+void TextMsgFix(DataPack hPack)
+{
+	int iCount = hPack.ReadCell();
+	
+	static int iPlayers[MAXPLAYERS+1];
+	
+	for(int i = 0; i < iCount; i++)
+	{
+		iPlayers[i] = hPack.ReadCell();
+	}
+	
+	static char sBuf[8192];
+	
+	hPack.ReadString(sBuf, sizeof sBuf);
+	
+	delete hPack;
+	
+	Protobuf hMessage = view_as<Protobuf>(StartMessageEx(g_TextMsg, iPlayers, iCount, USERMSG_RELIABLE|USERMSG_BLOCKHOOKS));
+	
+	if(hMessage)
+	{
+		hMessage.SetInt("msg_dst", 4);
+		hMessage.AddString("params", "#SFUI_ContractKillStart");
+		
+		Format(sBuf, sizeof sBuf, "</font>%s\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", sBuf);
+		hMessage.AddString("params", sBuf);
+		
+		hMessage.AddString("params", NULL_STRING);
+		hMessage.AddString("params", NULL_STRING);
+		hMessage.AddString("params", NULL_STRING);
+		hMessage.AddString("params", NULL_STRING);
+		
+		EndMessage();
+	}
 }
