@@ -39,7 +39,7 @@
 #pragma semicolon 1
 
 // Plugin Info
-#define VERSION "281"
+#define VERSION "282"
 
 // Database Definitions
 #define MYSQL 0
@@ -210,7 +210,7 @@ enum SkillGroup
 public Plugin myinfo =
 {
 	name = "SurfTimer",
-	author = "Ace & olokos",
+	author = "[z4lab] Ace | totles & olokos",
 	description = "a fork from fluffys cksurf fork",
 	version = VERSION,
 	url = "https://github.com/z4lab/z4lab-surftimer"

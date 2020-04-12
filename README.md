@@ -1,4 +1,7 @@
-# z4lab-SurfTimer 281 for CS:GO
+# z4lab-SurfTimer 282 for CS:GO
+
+
+### This repository won't be updated anymore! But I'll try to keep the timer running. Any currently open or new requests/issues will be closed/ignored! The timer (as is,) is working with the current version of csgo and sourcemod. I will NOT provide private support of any kind! For questions about the timer code ask the admins on the [surftimer discord](https://discord.gg/7SFDTvf). ~ Ace
 
 ## Installation and requirements
 [SourceMod 1.10](https://www.sourcemod.net/downloads.php?branch=stable), [MetaMod 1.10](https://www.sourcemm.net/downloads.php/?branch=stable) and a working MariaDB or MySQL8 instance is required for this plugin 
