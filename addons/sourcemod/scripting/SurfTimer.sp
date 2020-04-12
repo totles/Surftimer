@@ -1,4 +1,4 @@
-F/*=======================================================
+/*=======================================================
 =                 z4lab CS:GO SurfTimer                 =
  modified version of "SurfTimer" from fluffy for z4lab
  The original version of this timer was by jonitaikaponi 
